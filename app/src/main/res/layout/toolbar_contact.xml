@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:paddingTop="60dp"
+        android:layout_height="wrap_content"
+        android:text="Gandhinagar Institute of Technology"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Khatraj-Kalol Road, Moti Bhoyan,"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Gandhinagar district, Kalol,"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Gujarat 382721, India"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Phone: 9904405900,  02764-281860/61"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+
+    <TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:paddingTop="20dp"
+    android:layout_height="wrap_content"
+    android:text="Fax: 02764-281862"
+    android:textSize="20sp"
+    android:gravity="center"
+    android:layout_gravity="center"/>
+
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Mail:director@git.org.in"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/gmail"
+        android:layout_gravity="center"
+        android:id="@+id/gmail"
+        />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/call"
+        android:layout_gravity="center"
+        android:id="@+id/call"
+        />
+
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/fb"
+            android:layout_gravity="center"
+            android:id="@+id/fb"
+            />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/twit"
+            android:layout_gravity="center"
+            android:id="@+id/twit"
+            />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/fax"
+            android:layout_gravity="center"
+            android:id="@+id/fax"
+            />
+    </LinearLayout>
+
+</LinearLayout>
