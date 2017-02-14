@@ -7,8 +7,6 @@
     android:fitsSystemWindows="true"
     android:layout_alignParentTop="true"
     >
-
-
     <include layout="@layout/toolbar_aboutgit" />
     <include layout="@layout/toolbar" />
 
