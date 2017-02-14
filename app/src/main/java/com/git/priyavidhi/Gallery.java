@@ -29,8 +29,8 @@ public class Gallery extends AppCompatActivity {
 
     private String responseString, userName, emailId, phoneNo;
     SharedPreferences myPrefs;
-//    EditText edtName, edtDisc;
-//    ImageView ivDone;
+    EditText edtName, edtDisc;
+    ImageView ivDone;
     private DrawerLayout mDrawerLayout;
     NavigationView navigationView;
     private View headerLayout;
