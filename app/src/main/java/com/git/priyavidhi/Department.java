@@ -72,7 +72,7 @@ public class Department extends AppCompatActivity {
                         break;
 
                     case 1:
-                        Intent i2=new Intent(Department.this,Tx.class);
+                        Intent i2=new Intent(Department.this,FacultyMember.class);
                         startActivity(i2);
                         break;
 

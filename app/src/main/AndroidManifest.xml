@@ -102,13 +102,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DesignDemo"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name=".ViewPage"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DesignDemo"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name=".WalkThrought1Activity"
             android:screenOrientation="portrait"
@@ -124,6 +122,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".FacultyMember"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DesignDemo"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name="eu.janmuller.android.simplecropimage.CropImage" />
 
         <provider
@@ -133,7 +137,11 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyA3QLDB5gnzddqtfJ40ue7UiwepVfCqCck" />
+            android:value="AIzaSyA3QLDB5gnzddqtfJ40ue7UiwepVfCqCck" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
 
     </application>
