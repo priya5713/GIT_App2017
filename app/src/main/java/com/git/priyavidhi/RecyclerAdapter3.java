@@ -11,9 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Priya on 2/9/2017.
- */
 
 public class RecyclerAdapter3 extends  RecyclerView.Adapter<RecyclerViewHolder1> {
 

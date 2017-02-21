@@ -40,26 +40,15 @@ public class Jazba extends AppCompatActivity {
         ab.setTitle("Jazba");
 
 
+        WebView webView = (WebView) findViewById(R.id.wv1);
 
-
-
-        WebView webView=(WebView)findViewById(R.id.wv1);
-
-        String text = "<html><body>"
-                +"<p align=\"justify\">"
-                +"<b>"
-                +"Jazba (Annual Cultural Festival)"
-                +"</b>"
-                +"</p>"
-                +"<p align=\"justify\">"
-                +"Gandhinagar Institute of Technology, managed by Platinum Foundation, celebrates its grand gala annual cultural festival JAZBA. It showcases more than fifteen events including Antakshari, Quiz, Rangoli, Debate, T-shirt Painting, Singing, Dancing, Skit, Mr & Miss GIT, Face Painting, Cooking, Sand Art, Bhookhad, Laggy Cricket and many more. The day events are followed by musical evening program in which multi-talented students from various branches perform in various events like Skit, Solo & Duet Singing, Solo & Group Dance etc. Actress from movie and television industry are invited to inspire the students for culture and co-curricular activities. Ms. Sonal Chauhan (Jannat Movie Actreess), Mr. Ranvijay Singh (Actor and MTV Roadies Host), Hard Kaur (Singer, Rapper and Musician), Mr. Rajdeep Chatrerjee(Indion Idol Fame Singer) and many more become a part of this grand event.\n" +
-                "\n"
-                +"</p>"
-                + "</body></html>";
+        String text = "<html><body>" + "<p align=\"justify\">" + "<b>" + "Jazba (Annual Cultural Festival)" + "</b>" + "</p>" + "<p align=\"justify\">" + "Gandhinagar Institute of Technology, managed by Platinum Foundation, celebrates its grand gala annual cultural festival JAZBA. It showcases more than fifteen events including Antakshari, Quiz, Rangoli, Debate, T-shirt Painting, Singing, Dancing, Skit, Mr & Miss GIT, Face Painting, Cooking, Sand Art, Bhookhad, Laggy Cricket and many more. The day events are followed by musical evening program in which multi-talented students from various branches perform in various events like Skit, Solo & Duet Singing, Solo & Group Dance etc. Actress from movie and television industry are invited to inspire the students for culture and co-curricular activities. Ms. Sonal Chauhan (Jannat Movie Actreess), Mr. Ranvijay Singh (Actor and MTV Roadies Host), Hard Kaur (Singer, Rapper and Musician), Mr. Rajdeep Chatrerjee(Indion Idol Fame Singer) and many more become a part of this grand event.\n" +
+                "\n" + "</p>" + "</body></html>";
 
         webView.loadData(text, "text/html", "utf-8");
-    }
 
+
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {
