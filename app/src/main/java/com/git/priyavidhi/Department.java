@@ -67,7 +67,7 @@ public class Department extends AppCompatActivity {
                 switch (childPosition)
                 {
                     case 0:
-                        Intent i1=new Intent(Department.this,Jazba.class);
+                        Intent i1=new Intent(Department.this,AboutDept.class);
                         startActivity(i1);
                         break;
 
