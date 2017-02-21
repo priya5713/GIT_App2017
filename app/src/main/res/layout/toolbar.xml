@@ -44,8 +44,8 @@
 
                 <ImageView
                     android:id="@+id/ivPlus"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/ic_launcher"
                     android:gravity="center" />

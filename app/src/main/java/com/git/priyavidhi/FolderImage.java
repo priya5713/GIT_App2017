@@ -1,9 +1,8 @@
 package com.git.priyavidhi;
 
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -50,11 +49,19 @@ public class FolderImage extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_navigation_arrow_back);
         ab.setDisplayHomeAsUpEnabled(true);
-//        ab.setTitle("Faculty Members");// get it dynamically
+        ab.setTitle("Gallery");
 
 
         android.support.v7.widget.Toolbar toolbar1 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar1);
+        setSupportActionBar(toolbar);
+
+
+//        ab.setTitle("Jazba");// get it dynamically
+//        ab.setTitle("Faculty Members");// get it dynamically
+
+
+        android.support.v7.widget.Toolbar toolbar2 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar2);
     }
 
     private void initViews(){
@@ -83,7 +90,7 @@ public class FolderImage extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item != null && item.getItemId() == android.R.id.home) {
+        if (item != null && item.getItemId() ==R.id.home) {
             finish();
 
             overridePendingTransition(
