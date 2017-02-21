@@ -1,5 +1,6 @@
 package com.git.priyavidhi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +58,11 @@ public class FolderImage extends AppCompatActivity {
 
 
 //        ab.setTitle("Jazba");// get it dynamically
+//        ab.setTitle("Faculty Members");// get it dynamically
+
+
+        android.support.v7.widget.Toolbar toolbar1 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar1);
     }
 
     private void initViews(){
@@ -95,4 +101,6 @@ public class FolderImage extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
