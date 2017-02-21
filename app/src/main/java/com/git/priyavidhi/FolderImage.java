@@ -53,19 +53,9 @@ public class FolderImage extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_navigation_arrow_back);
         ab.setDisplayHomeAsUpEnabled(true);
-//        ab.setTitle("Ratri B4 Navratri");//get it dynamiccally
 
 
-        android.support.v7.widget.Toolbar toolbar1 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-
-//        ab.setTitle("Jazba");// get it dynamically
-//        ab.setTitle("Faculty Members");// get it dynamically
-
-
-        android.support.v7.widget.Toolbar toolbar2 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar2);
     }
 
     private void initViews(){
