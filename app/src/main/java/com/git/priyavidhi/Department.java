@@ -3,6 +3,7 @@ package com.git.priyavidhi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -79,6 +80,12 @@ public class Department extends AppCompatActivity {
                     case 2:
                         Intent i3=new Intent(Department.this,RatriB4Navratri.class);
                         startActivity(i3);
+                        break;
+
+                    case 3:
+
+                        Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://sites.google.com/a/git.org.in/it/"));
+                        startActivity(intent);
                         break;
                 }
 
@@ -256,41 +263,49 @@ public class Department extends AppCompatActivity {
         CivilEngineering.add("About");
         CivilEngineering.add("Faculty Members");
         CivilEngineering.add("Lab Facilities");
+        CivilEngineering.add("Study Materials");
 
         List<String> ComputerEngineering = new ArrayList<String>();
         ComputerEngineering.add("About");
         ComputerEngineering.add("Faculty Members");
         ComputerEngineering.add("Lab Facilities");
+        ComputerEngineering.add("Study Materials");
 
         List<String> ElectronicsComm = new ArrayList<String>();
         ElectronicsComm.add("About");
         ElectronicsComm.add("Faculty Members");
         ElectronicsComm.add("Lab Facilities");
+        ElectronicsComm.add("Study Materials");
 
         List<String> MechanicalEngineering = new ArrayList<String>();
         MechanicalEngineering.add("About");
         MechanicalEngineering.add("Faculty Members");
         MechanicalEngineering.add("Lab Facilities");
+        MechanicalEngineering.add("Study Materials");
 
         List<String> InformationTechnology = new ArrayList<String>();
         InformationTechnology.add("About");
         InformationTechnology.add("Faculty Members");
         InformationTechnology.add("Lab Facilities");
+        InformationTechnology.add("Study Materials");
 
         List<String> MathimaticsDepartment = new ArrayList<String>();
         MathimaticsDepartment.add("About");
         MathimaticsDepartment.add("Faculty Members");
         MathimaticsDepartment.add("Lab Facilities");
+        MathimaticsDepartment.add("Study Materials");
 
         List<String> ElectricalDepartment = new ArrayList<String>();
         ElectricalDepartment.add("About");
         ElectricalDepartment.add("Faculty Members");
         ElectricalDepartment.add("Lab Facilities");
+        ElectricalDepartment.add("Study Materials");
 
         List<String> Mba = new ArrayList<String>();
         Mba.add("About");
         Mba.add("Faculty Members");
         Mba.add("Lab Facilities");
+        Mba.add("Study Materials");
 
 
 
