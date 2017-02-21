@@ -50,7 +50,7 @@ public class ViewPageAdapter extends PagerAdapter {
 
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View itemView = inflater.inflate(R.layout.row_layout, container,
+        View itemView = inflater.inflate(R.layout.view_pager, container,
                 false);
 
 

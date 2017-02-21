@@ -25,6 +25,8 @@ import com.comman.CustomTypefaceSpan;
 
 import java.util.ArrayList;
 
+import static com.git.priyavidhi.R.styleable.NavigationView;
+
 public class Gallery extends AppCompatActivity {
 
     private String responseString, userName, emailId, phoneNo;
@@ -38,21 +40,16 @@ public class Gallery extends AppCompatActivity {
     private Menu menu;
 
     private final String android_version_names[] = {
-            "Donut",
-            "Eclair",
-            "Froyo",
-            "Gingerbread",
-            "Honeycomb",
-            "Ice Cream Sandwich",
-            "Jelly Bean",
-            "KitKat",
-            "Lollipop",
-            "Marshmallow"
+            "Jazba",
+            "TX",
+            "Ratri B4 Navratri",
+            "Annual Sports",
+            "Kite Festival",
+
     };
 
     private final int[] android_image_urls = {
-            R.drawable.vidhi,R.drawable.priya,R.drawable.niki,R.drawable.vidhi,R.drawable.priya,
-            R.drawable.niki,R.drawable.vidhi,R.drawable.priya,R.drawable.niki,R.drawable.vidhi};
+            R.drawable.folder,R.drawable.folder,R.drawable.folder,R.drawable.folder,R.drawable.folder};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
