@@ -58,18 +58,6 @@ public class Jazba extends AppCompatActivity {
                 + "</body></html>";
 
         webView.loadData(text, "text/html", "utf-8");
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     @Override

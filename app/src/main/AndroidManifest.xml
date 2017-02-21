@@ -102,13 +102,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DesignDemo"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name=".ViewPage"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DesignDemo"
             android:windowSoftInputMode="stateHidden" />
-
+        <activity
+            android:name=".FolderImage"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DesignDemo"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".WalkThrought1Activity"
             android:screenOrientation="portrait"
