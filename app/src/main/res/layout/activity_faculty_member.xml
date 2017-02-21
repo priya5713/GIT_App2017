@@ -5,7 +5,9 @@
 
 
 
-    <include layout="@layout/toolbar_facultymember"></include>
+    <include layout="@layout/toolbar_facultymember">
+
+    </include>
     <include layout="@layout/toolbar" />
 
 

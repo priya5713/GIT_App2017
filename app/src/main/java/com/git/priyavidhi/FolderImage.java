@@ -1,5 +1,6 @@
 package com.git.priyavidhi;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,13 +47,14 @@ public class FolderImage extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        android.support.v7.widget.Toolbar toolbar1 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar1);
-
         ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_navigation_arrow_back);
         ab.setDisplayHomeAsUpEnabled(true);
-//        ab.setTitle("Jazba");// get it dynamically
+//        ab.setTitle("Faculty Members");// get it dynamically
+
+
+        android.support.v7.widget.Toolbar toolbar1 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar1);
     }
 
     private void initViews(){
@@ -91,4 +93,6 @@ public class FolderImage extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
