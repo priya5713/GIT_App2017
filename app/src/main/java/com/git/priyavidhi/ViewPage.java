@@ -18,6 +18,7 @@ public class ViewPage extends AppCompatActivity {
                 R.anim.anim_slide_out_right);
     }
 
+
     ViewPager viewPager;
     PagerAdapter adapter;
     int[] flag;

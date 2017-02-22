@@ -6,6 +6,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class SplashActivity extends Activity {
 
@@ -13,13 +18,51 @@ public class SplashActivity extends Activity {
     String walkthrought;
     boolean login_flag, skip;
     SharedPreferences preferances;
+    TextView tvSplash,tvSplash1,tvSplash2;
+    Animation animZoomOut;
+    ImageView ivSplash;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        refresh_timer = new CTimer(1000, 1000);
+        animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.zoom_in);
+
+
+        tvSplash=(TextView)findViewById(R.id.tvSplash);
+        tvSplash.setVisibility(View.VISIBLE);
+        tvSplash.startAnimation(animZoomOut);
+
+
+        tvSplash1=(TextView)findViewById(R.id.tvSplash1);
+        tvSplash1.setVisibility(View.VISIBLE);
+        tvSplash1.startAnimation(animZoomOut);
+
+        tvSplash2=(TextView)findViewById(R.id.tvSplash2);
+        tvSplash2.setVisibility(View.VISIBLE);
+        tvSplash2.startAnimation(animZoomOut);
+
+
+
+        ivSplash=(ImageView)findViewById(R.id.ivSplash);
+
+        ivSplash.setVisibility(View.VISIBLE);
+        ivSplash.startAnimation(animZoomOut);
+//        RotateAnimation anim = new RotateAnimation(50f, 50f, 50f, 50f);
+//        // Step 2:  Set the Animation properties
+//        anim.setInterpolator(new LinearInterpolator());
+//        anim.setRepeatCount(Animation.INFINITE);
+//        anim.setDuration(700);
+//
+//        // Step 3: Start animating the image
+//        ivSplash.startAnimation(anim);
+
+
+
+        refresh_timer = new CTimer(3000, 3000);
         refresh_timer.start();
 
         preferances = PreferenceManager
