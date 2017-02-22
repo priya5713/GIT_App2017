@@ -1,5 +1,7 @@
 package com.git.priyavidhi;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +11,9 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.AnticipateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,37 +33,45 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.zoom_in);
-
-
         tvSplash=(TextView)findViewById(R.id.tvSplash);
-        tvSplash.setVisibility(View.VISIBLE);
-        tvSplash.startAnimation(animZoomOut);
 
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(tvSplash, "rotation", 360f,0f);
+        objectAnimator.setDuration(3000);
+        ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(tvSplash, "scaleX", 2.5f);
+        ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(tvSplash, "scaleY", 2.5f);
+        scaleDownY.setDuration(3000);
+        AnimatorSet scaleDown = new AnimatorSet();
+        scaleDown.play(objectAnimator).with(scaleDownY).with(scaleDownX);
+        scaleDown.start();
 
         tvSplash1=(TextView)findViewById(R.id.tvSplash1);
-        tvSplash1.setVisibility(View.VISIBLE);
-        tvSplash1.startAnimation(animZoomOut);
+
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(tvSplash1, "rotation", 360f,0f);
+        objectAnimator2.setDuration(3000);
+        ObjectAnimator scaleDownX2 = ObjectAnimator.ofFloat(tvSplash1, "scaleX", 2.5f);
+        ObjectAnimator scaleDownY2 = ObjectAnimator.ofFloat(tvSplash1, "scaleY", 2.5f);
+        scaleDownY.setDuration(3000);
+        AnimatorSet scaleDown2 = new AnimatorSet();
+        scaleDown2.play(objectAnimator2).with(scaleDownY2).with(scaleDownX2);
+        scaleDown2.start();
 
         tvSplash2=(TextView)findViewById(R.id.tvSplash2);
-        tvSplash2.setVisibility(View.VISIBLE);
-        tvSplash2.startAnimation(animZoomOut);
 
-
+        ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(tvSplash2, "rotation", 360f,0f);
+        objectAnimator3.setDuration(3000);
+        ObjectAnimator scaleDownX3 = ObjectAnimator.ofFloat(tvSplash2, "scaleX", 2.5f);
+        ObjectAnimator scaleDownY3 = ObjectAnimator.ofFloat(tvSplash2, "scaleY", 2.5f);
+        scaleDownY.setDuration(3000);
+        AnimatorSet scaleDown3 = new AnimatorSet();
+        scaleDown3.play(objectAnimator3).with(scaleDownY3).with(scaleDownX3);
+        scaleDown3.start();
 
         ivSplash=(ImageView)findViewById(R.id.ivSplash);
 
-        ivSplash.setVisibility(View.VISIBLE);
-        ivSplash.startAnimation(animZoomOut);
-//        RotateAnimation anim = new RotateAnimation(50f, 50f, 50f, 50f);
-//        // Step 2:  Set the Animation properties
-//        anim.setInterpolator(new LinearInterpolator());
-//        anim.setRepeatCount(Animation.INFINITE);
-//        anim.setDuration(700);
-//
-//        // Step 3: Start animating the image
-//        ivSplash.startAnimation(anim);
+        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(ivSplash, "rotation", 360f,0f);
+        objectAnimator1.setDuration(3000);
+        objectAnimator1.start();
+
 
 
 

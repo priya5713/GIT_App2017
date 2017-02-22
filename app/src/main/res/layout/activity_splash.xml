@@ -14,15 +14,12 @@
         android:src="@drawable/git"
         android:id="@+id/ivSplash"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-    />
-
+        android:layout_marginBottom="20dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvSplash"
-        android:paddingTop="5dp"
-        android:layout_margin="2dp"
+        android:paddingTop="10dp"
         android:layout_gravity="center"
         android:text="Gandhinagar"
         android:textStyle="bold"
@@ -33,12 +30,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvSplash1"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:text="Institute of"
         android:layout_gravity="center"
         android:gravity="center"
         android:textStyle="bold"
-        android:layout_margin="2dp"
         android:textColor="#fff"
         android:textSize="15sp"/>
     <TextView
@@ -48,8 +44,7 @@
         android:text="Technology"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:layout_margin="2dp"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:textColor="#fff"
         android:textSize="15sp"/>
 
