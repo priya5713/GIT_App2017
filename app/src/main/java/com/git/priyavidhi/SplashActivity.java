@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.AnticipateInterpolator;
+import android.view.animation.BounceInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
@@ -68,9 +69,14 @@ public class SplashActivity extends Activity {
 
         ivSplash=(ImageView)findViewById(R.id.ivSplash);
 
-        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(ivSplash, "rotation", 360f,0f);
-        objectAnimator1.setDuration(3000);
-        objectAnimator1.start();
+//        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(ivSplash, "rotation", 360f,0f);
+//        objectAnimator1.setDuration(3000);
+//        objectAnimator1.start();
+
+        ObjectAnimator moveAnim = ObjectAnimator.ofFloat(ivSplash, "Y", 300);
+        moveAnim.setDuration(2000);
+        moveAnim.setInterpolator(new LinearInterpolator());
+        moveAnim.start();
 
 
 

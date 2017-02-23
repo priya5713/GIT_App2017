@@ -12,7 +12,6 @@
        android:clipToPadding="false"
        android:paddingBottom="16dp"
        android:paddingTop="16dp"
-
        android:scrollbars="vertical"
        />
 

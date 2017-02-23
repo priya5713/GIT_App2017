@@ -42,20 +42,12 @@ public class FolderImage extends AppCompatActivity {
         setContentView(R.layout.activity_folder_image);
         initViews();
 
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        android.support.v7.widget.Toolbar toolbar1 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar1);
-
-
-        ActionBar ab = getSupportActionBar();
+        final ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_navigation_arrow_back);
-        ab.setDisplayHomeAsUpEnabled(false);
-
-        ab.setTitle("Ratri B4 Navratri");//get it dynamiccally
+        ab.setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -97,6 +89,4 @@ public class FolderImage extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
