@@ -17,8 +17,9 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/ic_action_action_account_circle"
-            android:paddingLeft="10dp" />
+            android:background="@drawable/git"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"/>
 
         <TextView
             android:id="@+id/tvUserName"
@@ -27,7 +28,7 @@
             android:layout_gravity="center"
             android:fontFamily="sans-serif-medium"
             android:paddingLeft="10dp"
-            android:text="Username"
+            android:text="GIT"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="15sp" />
 
