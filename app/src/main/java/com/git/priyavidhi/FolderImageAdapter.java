@@ -37,7 +37,7 @@ public class FolderImageAdapter extends RecyclerView.Adapter<FolderImageAdapter.
 
 
         Picasso.with(context).load(android.get(i).getAndroid_image_url()).resize(240, 120).into(viewHolder.img_android);
-//        viewHolder.tv_android.setText(android.get(i).getAndroid_version_name());
+
     }
 
     @Override
@@ -46,14 +46,13 @@ public class FolderImageAdapter extends RecyclerView.Adapter<FolderImageAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        //        private TextView tv_android;
+
         private ImageView img_android;
-        public TextView tv_android;
 
         public ViewHolder(View view) {
             super(view);
 
-//            tv_android = (TextView)view.findViewById(R.id.tv_android);
+
             img_android = (ImageView) view.findViewById(R.id.img_android);
 
             img_android.setOnClickListener(new View.OnClickListener() {
@@ -63,14 +62,10 @@ public class FolderImageAdapter extends RecyclerView.Adapter<FolderImageAdapter.
                     i.putExtra("pos",getAdapterPosition());
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(i);
-//                    Toast.makeText(context.getApplicationContext(),"helloo",Toast.LENGTH_SHORT).show();
 
                 }
             });
         }
-
     }
-
-
 }
 

@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -42,15 +43,27 @@ public class FolderImage extends AppCompatActivity {
         setContentView(R.layout.activity_folder_image);
         initViews();
 
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final ActionBar ab = getSupportActionBar();
+
+        ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_navigation_arrow_back);
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeButtonEnabled(true);
+//        ab.setTitle("Faculty Members");
 
 
+        android.support.v7.widget.Toolbar toolbar1 = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar1);
 
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     private void initViews(){
@@ -81,7 +94,6 @@ public class FolderImage extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() ==R.id.home) {
             finish();
-
             overridePendingTransition(
                     R.anim.anim_slide_in_right,
                     R.anim.anim_slide_out_right);

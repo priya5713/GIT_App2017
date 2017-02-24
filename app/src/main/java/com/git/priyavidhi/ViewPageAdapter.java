@@ -16,18 +16,13 @@ import android.widget.RelativeLayout;
 public class ViewPageAdapter extends PagerAdapter {
     // Declare Variables
     Context context;
-    String[] rank;
-    String[] country;
-    String[] population;
     int[] flag;
     int v;
     LayoutInflater inflater;
 
     public ViewPageAdapter(Context context,int[] flag) {
         this.context = context;
-        this.rank = rank;
-        this.country = country;
-        this.population = population;
+
         this.flag = flag;
     }
 
@@ -45,7 +40,7 @@ public class ViewPageAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
-        // Declare Variables
+
         ImageView imgflag;
 
         inflater = (LayoutInflater) context
@@ -58,8 +53,6 @@ public class ViewPageAdapter extends PagerAdapter {
         imgflag = (ImageView) itemView.findViewById(R.id.img_android);
         // Capture position and set to the ImageView
         imgflag.setImageResource(flag[position]);
-
-        // Add viewpager_item.xml to ViewPager
         ((ViewPager) container).addView(itemView);
 
         return itemView;
