@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.androidappbazzar.garagefinder"
@@ -33,7 +33,7 @@ dependencies {
     compile files('libs/urlimageviewhelper-1.0.4.jar')
     compile files('libs/httpmime-4.1.3.jar')
     compile 'com.android.support:appcompat-v7:23.4.0'
-    compile project(':simple-crop-image-lib')
+//    compile project(':simple-crop-image-lib')
     compile 'com.android.support:design:23.4.0'
     compile 'com.google.android.gms:play-services:9.0.2'
     compile 'com.google.android.gms:play-services-maps:9.0.2'

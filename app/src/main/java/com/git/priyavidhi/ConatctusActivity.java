@@ -55,7 +55,7 @@ public class ConatctusActivity extends AppCompatActivity {
         call=(Button)findViewById(R.id.call);
         fb=(Button)findViewById(R.id.fb);
         twit=(Button)findViewById(R.id.twit);
-        fax=(Button)findViewById(R.id.fax);
+//        fax=(Button)findViewById(R.id.fax);
 
         
 

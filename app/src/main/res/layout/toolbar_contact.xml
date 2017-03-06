@@ -140,13 +140,13 @@
             android:id="@+id/twit"
             />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="20"
-            android:layout_height="50dp"
-            android:background="@drawable/fax"
-            android:id="@+id/fax"
-            />
+        <!--<Button-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="20"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:background="@drawable/fax"-->
+            <!--android:id="@+id/fax"-->
+            <!--/>-->
     </LinearLayout>
 
 </LinearLayout>
