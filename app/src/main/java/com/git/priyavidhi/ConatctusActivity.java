@@ -57,10 +57,6 @@ public class ConatctusActivity extends AppCompatActivity {
         twit=(Button)findViewById(R.id.twit);
 //        fax=(Button)findViewById(R.id.fax);
 
-        
-
-
-
 
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
