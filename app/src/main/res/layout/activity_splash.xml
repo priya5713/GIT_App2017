@@ -14,13 +14,13 @@
         android:src="@drawable/git"
         android:id="@+id/ivSplash"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"/>
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvSplash"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_gravity="center"
         android:text="Gandhinagar"
         android:textStyle="bold"
