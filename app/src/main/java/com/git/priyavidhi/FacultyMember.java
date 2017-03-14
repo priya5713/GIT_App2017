@@ -46,7 +46,7 @@ public class FacultyMember extends AppCompatActivity {
 
 
 
-        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view_faculty);
+        recyclerView = (RecyclerView) findViewById(R.id.rFaculty);
 
         RecyclerAdapter4 adapter = new RecyclerAdapter4(this);
         recyclerView.setAdapter(adapter);

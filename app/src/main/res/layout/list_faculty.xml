@@ -18,7 +18,7 @@
 
 
         <ImageView
-            android:id="@+id/list_fm"
+            android:id="@+id/fImg"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentTop="true"
@@ -28,7 +28,7 @@
             android:src="@drawable/ic_launcher" />
 
         <TextView
-            android:id="@+id/list_title"
+            android:id="@+id/fName"
             android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
 
 
         <TextView
-            android:id="@+id/list_designation"
+            android:id="@+id/fDesignation"
             android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
