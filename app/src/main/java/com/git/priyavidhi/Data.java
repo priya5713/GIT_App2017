@@ -7,6 +7,7 @@ package com.git.priyavidhi;
 public class Data {
     public String cDate;
     public String cTitle;
-
+    public String nDate;
+    public String nTitle;
 
 }

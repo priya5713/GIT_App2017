@@ -67,7 +67,7 @@ public class Circular extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circular);
         recyclerView= (RecyclerView)findViewById(R.id.rCircular);
-//        RecyclerAdapter adapter=new RecyclerAdapter(this,mAdapter);
+//     RecyclerAdapter adapter=new RecyclerAdapter(this,mAdapter);
 //        recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -233,7 +233,7 @@ public class Circular extends AppCompatActivity {
         });
     }
 
-    private class AsyncLogin extends AsyncTask<String, String, String> {
+    protected class AsyncLogin extends AsyncTask<String, String, String> {
         ProgressDialog pdLoading = new ProgressDialog(Circular.this);
         HttpURLConnection conn;
         URL url = null;
@@ -255,7 +255,7 @@ public class Circular extends AppCompatActivity {
 
                 // Enter URL address where your json file resides
                 // Even you can make call to php file which returns json data
-                url = new URL("http://gitapp.ravikoradiya.com/gitapp.php?format=json");
+                url = new URL("http://gitapp.ravikoradiya.com/git_circular.php?format=json");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block
