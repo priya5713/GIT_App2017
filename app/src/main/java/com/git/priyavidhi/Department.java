@@ -27,6 +27,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.git.priyavidhi.R.styleable.NavigationView;
+
 public class Department extends AppCompatActivity {
 
     private String responseString, userName, emailId, phoneNo;
