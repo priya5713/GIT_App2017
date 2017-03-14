@@ -1,7 +1,6 @@
 package com.git.priyavidhi;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +26,7 @@ class RecyclerAdapter extends  RecyclerView.Adapter<RecyclerViewHolder> {
     public RecyclerAdapter(Context context , List<Data> data) {
         this.context = context;
         inflater = LayoutInflater.from(context);
-        this.data=data;
+        this.data= data;
 
     }
 

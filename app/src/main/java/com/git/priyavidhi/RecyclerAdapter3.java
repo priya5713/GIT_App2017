@@ -32,9 +32,9 @@ public class RecyclerAdapter3 extends  RecyclerView.Adapter<RecyclerViewHolder1>
     @Override
     public void onBindViewHolder(RecyclerViewHolder1 holder, int position) {
 
-        holder.tv1.setText(name[position]);
-        holder.itemView.setOnClickListener(clickListener);
-        holder.itemView.setTag(holder);
+//        holder.tv1.setText(name[position]);
+//        holder.itemView.setOnClickListener(clickListener);
+//        holder.itemView.setTag(holder);
     }
 
     private View.OnClickListener clickListener=new View.OnClickListener() {

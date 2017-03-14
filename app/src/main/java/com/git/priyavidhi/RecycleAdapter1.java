@@ -5,54 +5,74 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.TextView;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by Priya on 2/8/2017.
  */
 
-class RecyclerAdapter1 extends  RecyclerView.Adapter<RecyclerViewHolder> {
+class RecyclerAdapter1 extends  RecyclerView.Adapter<RecyclerViewHolder1> {
 
-    String [] name={"Androidwarriors","Stackoverflow","Developer Android","AndroidHive",
-            "Slidenerd","TheNewBoston","Truiton","HmkCode","JavaTpoint","Javapeper"};
+    //    String [] name={"Androidwarriors","Stackoverflow","Developer Android","AndroidHive",
+//            "Slidenerd","TheNewBoston","Truiton","HmkCode","JavaTpoint","Javapeper"};
     Context context;
     LayoutInflater inflater;
-    public RecyclerAdapter1(Context context) {
-        this.context=context;
-        inflater=LayoutInflater.from(context);
-    }
-    @Override
-    public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v=inflater.inflate(R.layout.list_news, parent, false);
 
-        RecyclerViewHolder viewHolder=new RecyclerViewHolder(v);
+    List<Data> data= Collections.emptyList();
+
+    public RecyclerAdapter1(Context context , List<Data> data) {
+        this.context = context;
+        inflater = LayoutInflater.from(context);
+        this.data= data;
+
+    }
+
+
+
+    @Override
+    public RecyclerViewHolder1 onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = inflater.inflate(R.layout.list_news, parent, false);
+
+        RecyclerViewHolder1 viewHolder = new RecyclerViewHolder1(v);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerViewHolder1 holder, int position) {
 
-//        holder.tv1.setText(name[position]);
-//        holder.imageView.setOnClickListener(clickListener);
-//        holder.imageView.setTag(holder);
+
+        RecyclerViewHolder1 myHolder= (RecyclerViewHolder1) holder;
+        Data current=data.get(position);
+        myHolder.nDate.setText(current.nDate);
+        myHolder.nTitle.setText(current.nTitle);
+
     }
-
-    View.OnClickListener clickListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-
-            RecyclerViewHolder vholder = (RecyclerViewHolder) v.getTag();
-            int position = vholder.getPosition();
-
-            Toast.makeText(context,"This is position "+position,Toast.LENGTH_LONG ).show();
-
-        }
-    };
-
 
 
     @Override
     public int getItemCount() {
-        return name.length;
+
+        return data.size();
+
     }
+
+    class RecycleViewHolder1 extends RecyclerView.ViewHolder{
+
+        TextView nDate,nTitle;
+
+
+        // create constructor to get widget reference
+        public RecycleViewHolder1(View itemView) {
+            super(itemView);
+            nDate= (TextView) itemView.findViewById(R.id.nDate);
+            nTitle= (TextView) itemView.findViewById(R.id.nTitle);
+
+        }
+
+    }
+
+
 }
