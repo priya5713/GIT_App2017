@@ -58,6 +58,10 @@ public class HomeActivity extends AppCompatActivity {
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
 
+        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+
+
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         menu = navigationView.getMenu();

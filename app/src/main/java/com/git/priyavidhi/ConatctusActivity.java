@@ -27,7 +27,7 @@ public class ConatctusActivity extends AppCompatActivity {
     private String responseString, userName, emailId, phoneNo;
     SharedPreferences myPrefs;
     EditText edtName, edtDisc;
-    ImageView ivDone;
+    ImageView ivPlus;
     private DrawerLayout mDrawerLayout;
     NavigationView navigationView;
     private View headerLayout;
@@ -61,6 +61,17 @@ public class ConatctusActivity extends AppCompatActivity {
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
+
+
+        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1=new Intent(ConatctusActivity.this,HomeActivity.class);
+                startActivity(i1);
+                finish();
+            }
+        });
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
