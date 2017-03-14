@@ -20,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comman.CustomTypefaceSpan;
@@ -47,6 +48,7 @@ public class Circular extends AppCompatActivity {
     private View headerLayout;
     private TextView UserName;
     private Menu menu;
+    ImageView ivPlus;
 
     RecyclerView recyclerView;
 
@@ -85,6 +87,16 @@ public class Circular extends AppCompatActivity {
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
+
+        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1=new Intent(Circular.this,HomeActivity.class);
+                startActivity(i1);
+                finish();
+            }
+        });
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
