@@ -1,8 +1,10 @@
 package com.git.priyavidhi;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -13,47 +15,68 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comman.CustomTypefaceSpan;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
 public class NewsFeed extends AppCompatActivity {
 
-    private String responseString, userName, emailId, phoneNo;
-    SharedPreferences myPrefs;
-    EditText edtName, edtDisc;
-    ImageView ivPlus;
+
+
     private DrawerLayout mDrawerLayout;
     NavigationView navigationView;
     private View headerLayout;
     private TextView UserName;
     private Menu menu;
+    ImageView ivPlus;
 
     RecyclerView recyclerView;
 
+
+    public static final int CONNECTION_TIMEOUT = 20000;
+    public static final int READ_TIMEOUT = 25000;
+    private static final String TAG = "MainActivity";
+
+    private RecyclerView rNews;
+    private RecyclerView.Adapter mAdapter;
+    private TextView tvName;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_feed);
-
-
-        recyclerView= (RecyclerView)findViewById(R.id.my_recycler_view);
-
-        RecyclerAdapter1 adapter=new RecyclerAdapter1(this);
-        recyclerView.setAdapter(adapter);
+        recyclerView= (RecyclerView)findViewById(R.id.rNews);
+//     RecyclerAdapter adapter=new RecyclerAdapter(this,mAdapter);
+//        recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        new AsyncLogin().execute();
 
         final ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_navigation_menu);
@@ -64,7 +87,6 @@ public class NewsFeed extends AppCompatActivity {
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
-
 
         ivPlus=(ImageView)findViewById(R.id.ivPlus);
         ivPlus.setOnClickListener(new View.OnClickListener() {
@@ -189,6 +211,7 @@ public class NewsFeed extends AppCompatActivity {
                         break;
 
 
+
                     case R.id.nav_Share:
                         try {
                             Intent i = new Intent(Intent.ACTION_SEND);
@@ -210,6 +233,135 @@ public class NewsFeed extends AppCompatActivity {
         });
     }
 
+    protected class AsyncLogin extends AsyncTask<String, String, String> {
+        ProgressDialog pdLoading = new ProgressDialog(NewsFeed.this);
+        HttpURLConnection conn;
+        URL url = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            //this method will be running on UI thread
+            pdLoading.setMessage("\tLoading...");
+            pdLoading.setCancelable(false);
+            pdLoading.show();
+
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+
+                // Enter URL address where your json file resides
+                // Even you can make call to php file which returns json data
+                url = new URL("http://gitapp.ravikoradiya.com/git_news.php?format=json");
+
+            } catch (MalformedURLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                return e.toString();
+            }
+            try {
+
+                // Setup HttpURLConnection class to send and receive data from php and mysql
+                conn = (HttpURLConnection) url.openConnection();
+//                conn.setReadTimeout(READ_TIMEOUT);
+                conn.setConnectTimeout(CONNECTION_TIMEOUT);
+                conn.setRequestMethod("GET");
+
+                // setDoOutput to true as we recieve data from json file
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+                return e1.toString();
+            }
+
+            try {
+                int response_code = conn.getResponseCode();
+                Log.d(TAG, "doInBackground: " + response_code);
+
+
+                // Check if successful connection made
+                if (response_code == HttpURLConnection.HTTP_OK) {
+
+                    // Read data sent from server
+                    InputStream input = conn.getInputStream();
+
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                    StringBuilder result = new StringBuilder();
+                    String line;
+
+                    while ((line = reader.readLine()) != null) {
+                        result.append(line);
+                    }
+
+                    // Pass data to onPostExecute method
+                    return (result.toString());
+
+                } else {
+
+                    return ("unsuccessful");
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                return e.toString();
+            } finally {
+                conn.disconnect();
+            }
+
+
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+
+            Log.e(TAG, "onPostExecute: " + result);
+
+            //this method will be running on UI thread
+            pdLoading.dismiss();
+            List<Data> data = new ArrayList<>();
+
+            pdLoading.dismiss();
+            try {
+
+                JSONArray jArray = new JSONArray(result);
+
+                // Extract data from json and store into ArrayList as class objects
+                for (int i = 0; i < jArray.length(); i++) {
+//                    JSONObject json_data=new JSONObject(result);
+                    JSONObject json_data = jArray.getJSONObject(i);
+                    Data fishData = new Data();
+                    fishData.nDate = json_data.getString("date");
+                    fishData.nTitle = json_data.getString("newstitle");
+
+                    data.add(fishData);
+                }
+
+                // Setup and Handover data to recyclerview
+                rNews = (RecyclerView) findViewById(R.id.rNews);
+                mAdapter = new RecyclerAdapter1(NewsFeed.this, data);
+                rNews.setAdapter(mAdapter);
+                rNews.setLayoutManager(new LinearLayoutManager(NewsFeed.this));
+
+            } catch (JSONException e) {
+
+
+                // TODO Auto-generated catch block
+                Log.d("HTTP", "Error parsing data " + e.toString());
+                Log.d("HTTP", "Failed data was:\n" + result);
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/proximanova-semibold-webfont.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
@@ -229,4 +381,8 @@ public class NewsFeed extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 }

@@ -21,7 +21,7 @@ class RecyclerViewHolder4 extends RecyclerView.ViewHolder {
         tv2= (TextView) itemView.findViewById(R.id.list_designation);
         tv2= (TextView) itemView.findViewById(R.id.list_study);
 
-        imageView= (ImageView) itemView.findViewById(R.id.list_fm);
+//        imageView= (ImageView) itemView.findViewById(R.id.list_fm);
 
     }
 }
