@@ -32,6 +32,7 @@ public class FacultyMember extends AppCompatActivity {
     public static final int CONNECTION_TIMEOUT = 20000;
     public static final int READ_TIMEOUT = 25000;
     private static final String TAG = "MainActivity";
+    public static String DEPT_VAL = "deptVal";
 
     private RecyclerView rFaculty;
     private RecyclerView.Adapter mAdapter;

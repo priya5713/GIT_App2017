@@ -13,6 +13,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import static android.support.v7.recyclerview.R.styleable.RecyclerView;
+
 /**
  * Created by vidhi on 2/9/2017.
  */

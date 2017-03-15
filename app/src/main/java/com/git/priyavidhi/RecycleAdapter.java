@@ -27,7 +27,6 @@ class RecyclerAdapter extends  RecyclerView.Adapter<RecyclerViewHolder> {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.data= data;
-
     }
 
 

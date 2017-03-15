@@ -77,12 +77,12 @@ public class Department extends AppCompatActivity {
                         startActivity(i2);
                         break;
 
-                    case 2:
-                        Intent i3=new Intent(Department.this,RatriB4Navratri.class);
-                        startActivity(i3);
-                        break;
+//                    case 2:
+//                        Intent i3=new Intent(Department.this,RatriB4Navratri.class);
+//                        startActivity(i3);
+//                        break;
 
-                    case 3:
+                    case 2:
 
                         Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://sites.google.com/a/git.org.in/it/"));
                         startActivity(intent);
@@ -262,49 +262,49 @@ public class Department extends AppCompatActivity {
         List<String> CivilEngineering = new ArrayList<String>();
         CivilEngineering.add("About");
         CivilEngineering.add("Faculty Members");
-        CivilEngineering.add("Lab Facilities");
+//        CivilEngineering.add("Lab Facilities");
         CivilEngineering.add("Study Materials");
 
         List<String> ComputerEngineering = new ArrayList<String>();
         ComputerEngineering.add("About");
         ComputerEngineering.add("Faculty Members");
-        ComputerEngineering.add("Lab Facilities");
+//        ComputerEngineering.add("Lab Facilities");
         ComputerEngineering.add("Study Materials");
 
         List<String> ElectronicsComm = new ArrayList<String>();
         ElectronicsComm.add("About");
         ElectronicsComm.add("Faculty Members");
-        ElectronicsComm.add("Lab Facilities");
+//        ElectronicsComm.add("Lab Facilities");
         ElectronicsComm.add("Study Materials");
 
         List<String> MechanicalEngineering = new ArrayList<String>();
         MechanicalEngineering.add("About");
         MechanicalEngineering.add("Faculty Members");
-        MechanicalEngineering.add("Lab Facilities");
+//        MechanicalEngineering.add("Lab Facilities");
         MechanicalEngineering.add("Study Materials");
 
         List<String> InformationTechnology = new ArrayList<String>();
         InformationTechnology.add("About");
         InformationTechnology.add("Faculty Members");
-        InformationTechnology.add("Lab Facilities");
+//        InformationTechnology.add("Lab Facilities");
         InformationTechnology.add("Study Materials");
 
         List<String> MathimaticsDepartment = new ArrayList<String>();
         MathimaticsDepartment.add("About");
         MathimaticsDepartment.add("Faculty Members");
-        MathimaticsDepartment.add("Lab Facilities");
+//        MathimaticsDepartment.add("Lab Facilities");
         MathimaticsDepartment.add("Study Materials");
 
         List<String> ElectricalDepartment = new ArrayList<String>();
         ElectricalDepartment.add("About");
         ElectricalDepartment.add("Faculty Members");
-        ElectricalDepartment.add("Lab Facilities");
+//        ElectricalDepartment.add("Lab Facilities");
         ElectricalDepartment.add("Study Materials");
 
         List<String> Mba = new ArrayList<String>();
         Mba.add("About");
         Mba.add("Faculty Members");
-        Mba.add("Lab Facilities");
+//        Mba.add("Lab Facilities");
         Mba.add("Study Materials");
 
 
