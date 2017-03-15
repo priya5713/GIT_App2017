@@ -41,8 +41,8 @@ public class ViewPage extends AppCompatActivity {
 
         int v1=getIntent().getIntExtra("pos",0);
 
-        flag = new int[] {  R.drawable.vidhi,R.drawable.priya,R.drawable.niki,R.drawable.vidhi,R.drawable.priya,
-                R.drawable.niki,R.drawable.vidhi,R.drawable.priya,R.drawable.niki,R.drawable.vidhi };
+        flag = new int[] {  R.drawable.v1,R.drawable.v2,R.drawable.v3,R.drawable.v4,R.drawable.v5,
+                R.drawable.v6,R.drawable.v7,R.drawable.v8,R.drawable.v9,R.drawable.v10 };
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         // Pass results to ViewPagerAdapter Class

@@ -27,8 +27,8 @@ public class FolderImage extends AppCompatActivity {
     };
 
     private final int[] android_image_urls = {
-            R.drawable.vidhi,R.drawable.priya,R.drawable.niki,R.drawable.vidhi,R.drawable.priya,
-            R.drawable.niki,R.drawable.vidhi,R.drawable.priya,R.drawable.niki,R.drawable.vidhi};
+            R.drawable.v1,R.drawable.v2,R.drawable.v3,R.drawable.v4,R.drawable.v5,
+            R.drawable.v6,R.drawable.v7,R.drawable.v8,R.drawable.v9,R.drawable.v10};
     @Override
     public void onBackPressed() {
         super.onBackPressed();

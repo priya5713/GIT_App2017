@@ -32,12 +32,13 @@ public class Department extends AppCompatActivity {
     private String responseString, userName, emailId, phoneNo;
     SharedPreferences myPrefs;
     EditText edtName, edtDisc;
-    ImageView ivDone;
+    ImageView ivPlus;
     private DrawerLayout mDrawerLayout;
     NavigationView navigationView;
     private View headerLayout;
     private TextView UserName;
     private Menu menu;
+
 
 
     ExpandableListAdapter listAdapter;
@@ -50,6 +51,15 @@ public class Department extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_department);
 
+        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1=new Intent(Department.this,HomeActivity.class);
+                startActivity(i1);
+                finish();
+            }
+        });
 
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
