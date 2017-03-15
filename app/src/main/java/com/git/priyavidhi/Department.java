@@ -27,14 +27,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.git.priyavidhi.R.styleable.NavigationView;
-
 public class Department extends AppCompatActivity {
 
     private String responseString, userName, emailId, phoneNo;
     SharedPreferences myPrefs;
     EditText edtName, edtDisc;
-    ImageView ivPlus;
+    ImageView ivDone;
     private DrawerLayout mDrawerLayout;
     NavigationView navigationView;
     private View headerLayout;
@@ -79,10 +77,10 @@ public class Department extends AppCompatActivity {
                         startActivity(i2);
                         break;
 
-//                    case 2:
-//                        Intent i3=new Intent(Department.this,RatriB4Navratri.class);
-//                        startActivity(i3);
-//                        break;
+                    case 2:
+                        Intent i3=new Intent(Department.this,RatriB4Navratri.class);
+                        startActivity(i3);
+                        break;
 
                     case 3:
 
@@ -109,17 +107,6 @@ public class Department extends AppCompatActivity {
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
-
-
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
-        ivPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i1=new Intent(Department.this,HomeActivity.class);
-                startActivity(i1);
-                finish();
-            }
-        });
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -256,7 +243,7 @@ public class Department extends AppCompatActivity {
         });
     }
 
-    public void prepareListData() {
+    private void prepareListData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
 
@@ -275,49 +262,49 @@ public class Department extends AppCompatActivity {
         List<String> CivilEngineering = new ArrayList<String>();
         CivilEngineering.add("About");
         CivilEngineering.add("Faculty Members");
-//        CivilEngineering.add("Lab Facilities");
+        CivilEngineering.add("Lab Facilities");
         CivilEngineering.add("Study Materials");
 
         List<String> ComputerEngineering = new ArrayList<String>();
         ComputerEngineering.add("About");
         ComputerEngineering.add("Faculty Members");
-//        ComputerEngineering.add("Lab Facilities");
+        ComputerEngineering.add("Lab Facilities");
         ComputerEngineering.add("Study Materials");
 
         List<String> ElectronicsComm = new ArrayList<String>();
         ElectronicsComm.add("About");
         ElectronicsComm.add("Faculty Members");
-//        ElectronicsComm.add("Lab Facilities");
+        ElectronicsComm.add("Lab Facilities");
         ElectronicsComm.add("Study Materials");
 
         List<String> MechanicalEngineering = new ArrayList<String>();
         MechanicalEngineering.add("About");
         MechanicalEngineering.add("Faculty Members");
-//        MechanicalEngineering.add("Lab Facilities");
+        MechanicalEngineering.add("Lab Facilities");
         MechanicalEngineering.add("Study Materials");
 
         List<String> InformationTechnology = new ArrayList<String>();
         InformationTechnology.add("About");
         InformationTechnology.add("Faculty Members");
-//        InformationTechnology.add("Lab Facilities");
+        InformationTechnology.add("Lab Facilities");
         InformationTechnology.add("Study Materials");
 
         List<String> MathimaticsDepartment = new ArrayList<String>();
         MathimaticsDepartment.add("About");
         MathimaticsDepartment.add("Faculty Members");
-//        MathimaticsDepartment.add("Lab Facilities");
+        MathimaticsDepartment.add("Lab Facilities");
         MathimaticsDepartment.add("Study Materials");
 
         List<String> ElectricalDepartment = new ArrayList<String>();
         ElectricalDepartment.add("About");
         ElectricalDepartment.add("Faculty Members");
-//        ElectricalDepartment.add("Lab Facilities");
+        ElectricalDepartment.add("Lab Facilities");
         ElectricalDepartment.add("Study Materials");
 
         List<String> Mba = new ArrayList<String>();
         Mba.add("About");
         Mba.add("Faculty Members");
-//        Mba.add("Lab Facilities");
+        Mba.add("Lab Facilities");
         Mba.add("Study Materials");
 
 
