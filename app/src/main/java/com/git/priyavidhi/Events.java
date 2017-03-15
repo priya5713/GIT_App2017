@@ -56,6 +56,16 @@ public class Events extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
+        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1=new Intent(Events.this,HomeActivity.class);
+                startActivity(i1);
+                finish();
+            }
+        });
+
         context=this;
 
         recyclerView= (RecyclerView) findViewById(R.id.my_recycler_view);
@@ -79,17 +89,6 @@ public class Events extends AppCompatActivity {
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
-
-
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
-        ivPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i1=new Intent(Events.this,HomeActivity.class);
-                startActivity(i1);
-                finish();
-            }
-        });
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);

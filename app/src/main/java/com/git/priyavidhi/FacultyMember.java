@@ -214,6 +214,7 @@ public class FacultyMember extends AppCompatActivity {
                     fishData.fMail = json_data.getString("email");
                     fishData.fDesignation = json_data.getString("designation");
 
+
                     data.add(fishData);
                 }
 
