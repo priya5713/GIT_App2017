@@ -97,5 +97,16 @@
         android:textSize="20dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:freezesText="true"></TextView>
+        android:freezesText="true"/>
+
+    <Button
+        android:id="@+id/btnMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"
+        android:text="Watch Institute Movie"/>
+
+
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.git.priyavidhi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView Title;
     private ImageView img_pic,ivPlus;
     private Menu menu;
+    Button btnMovie;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,15 @@ public class HomeActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setTitle("Home");
 
+        btnMovie=(Button)findViewById(R.id.btnMovie);
+
+        btnMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.youtube.com/embed/0q4qegz16DE"));
+                startActivity(intent);
+            }
+        });
 
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
