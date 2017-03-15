@@ -74,6 +74,13 @@ public class Department extends AppCompatActivity {
 
                     case 1:
                         Intent i2=new Intent(Department.this,FacultyMember.class);
+                        if (listDataHeader.equals("Civil Engineering"))
+                        {
+                            i2.putExtra("dept","Civil Engineering");
+                        }
+                        else {
+                            i2.putExtra("dept","Computer Engineering");
+                        }
                         startActivity(i2);
                         break;
 
@@ -243,7 +250,7 @@ public class Department extends AppCompatActivity {
         });
     }
 
-    private void prepareListData() {
+    public void prepareListData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
 

@@ -1,6 +1,7 @@
 package com.git.priyavidhi;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -62,6 +63,10 @@ public class FacultyMember extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Intent intent=getIntent();
+        String dept=intent.getStringExtra("dept");
+
+        Log.e("Dept",""+dept);
 
         ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_navigation_arrow_back);
@@ -97,6 +102,13 @@ public class FacultyMember extends AppCompatActivity {
         ProgressDialog pdLoading = new ProgressDialog(FacultyMember.this);
         HttpURLConnection conn;
         URL url = null;
+
+        Intent intent=getIntent();
+        String dept=intent.getStringExtra("dept");
+
+
+
+
 
         @Override
         protected void onPreExecute() {

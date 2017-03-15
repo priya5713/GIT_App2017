@@ -3,6 +3,7 @@ package com.git.priyavidhi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -52,10 +53,59 @@ public class ConatctusActivity extends AppCompatActivity {
         ab.setTitle("Contact us");
 
         gmail=(Button)findViewById(R.id.gmail);
+
+        gmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                Uri data = Uri.parse("mailto:director@git.org.in");
+                intent.setData(data);
+                startActivity(intent);
+            }
+        });
         call=(Button)findViewById(R.id.call);
+
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:9904405900"));
+                startActivity(callIntent);
+            }
+        });
         fb=(Button)findViewById(R.id.fb);
+
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.facebook.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+
+            }
+        });
         twit=(Button)findViewById(R.id.twit);
-//        fax=(Button)findViewById(R.id.fax);
+
+        twit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.twitter.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+
+
+            }
+        });
+        fax=(Button)findViewById(R.id.fax);
+
+        fax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:02764-281862"));
+                startActivity(callIntent);
+            }
+        });
 
 
         Spannable text2 = new SpannableString(ab.getTitle());
