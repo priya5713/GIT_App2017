@@ -2,70 +2,98 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="160dp"
     android:layout_marginBottom="16dp"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     android:background="#C5CAE9"
     android:foreground="?attr/selectableItemBackground"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-    <RelativeLayout
+
+
+    <ImageView
+        android:id="@+id/fImg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher" />
+
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="14dp"
-        android:layout_height="wrap_content">
-
-
-
-        <ImageView
-            android:id="@+id/fImg"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="10dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher" />
+        android:orientation="vertical"
+        android:paddingTop="14dp">
 
         <TextView
             android:id="@+id/fName"
-            android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="45dp"
             android:layout_toRightOf="@+id/list_avatar"
             android:text="Prof.Rahul Vaghela "
-            android:textColor="#000000"
             android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#000000"
             android:textSize="16sp" />
 
 
         <TextView
             android:id="@+id/fDesignation"
-            android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="45dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@+id/list_avatar"
             android:text="Assistant Professor and HOD "
-            android:textColor="#000000"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:layout_below="@+id/list_title"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/fExp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fImg"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="45dp"
+            android:text="Assistant Professor and HOD "
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/fMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fDesignation"
+            android:layout_marginLeft="45dp"
+            android:layout_toRightOf="@+id/list_avatar"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#000000"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/list_study"
+            android:id="@+id/fQualification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/list_designation"
             android:layout_marginLeft="45dp"
-            android:layout_toRightOf="@+id/list_avatar"
-            android:textColor="#000000"
+            android:maxLines="4"
             android:ellipsize="end"
-            android:singleLine="true"
+            android:singleLine="false"
             android:text="M.S.(Information Technology)(Central Queensland University, Australia), B.E. (Information Technology"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="14sp" />
-    </RelativeLayout>
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_below="@+id/fImg"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp" />
+
+    </LinearLayout>
+
 </android.support.v7.widget.CardView>

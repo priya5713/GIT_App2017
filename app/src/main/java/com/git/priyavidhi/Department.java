@@ -256,7 +256,7 @@ public class Department extends AppCompatActivity {
         });
     }
 
-    private void prepareListData() {
+    public void prepareListData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
 

@@ -11,17 +11,20 @@ import android.widget.TextView;
 
 class RecyclerViewHolder4 extends RecyclerView.ViewHolder {
 
-    TextView tv1,tv2;
+    TextView fName,fExp,fQualification,fDesignation,fMail;
     ImageView imageView;
 
     public RecyclerViewHolder4(View itemView) {
         super(itemView);
 
-        tv1= (TextView) itemView.findViewById(R.id.list_title);
-        tv2= (TextView) itemView.findViewById(R.id.list_designation);
-        tv2= (TextView) itemView.findViewById(R.id.list_study);
+        fName= (TextView) itemView.findViewById(R.id.fName);
+        fExp= (TextView) itemView.findViewById(R.id.fExp);
+        fMail= (TextView) itemView.findViewById(R.id.fMail);
+        imageView= (ImageView) itemView.findViewById(R.id.fImg);
+        fQualification= (TextView) itemView.findViewById(R.id.fQualification);
+        fDesignation= (TextView) itemView.findViewById(R.id.fDesignation);
 
-//        imageView= (ImageView) itemView.findViewById(R.id.list_fm);
+
 
     }
 }
