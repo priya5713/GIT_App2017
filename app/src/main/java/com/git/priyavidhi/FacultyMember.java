@@ -63,10 +63,10 @@ public class FacultyMember extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent intent=getIntent();
-        String dept=intent.getStringExtra("dept");
-
-        Log.e("Dept",""+dept);
+//        Intent intent=getIntent();
+//        String dept=intent.getStringExtra("dept");
+//
+//        Log.e("Dept",""+dept);
 
         ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_navigation_arrow_back);
@@ -103,8 +103,8 @@ public class FacultyMember extends AppCompatActivity {
         HttpURLConnection conn;
         URL url = null;
 
-        Intent intent=getIntent();
-        String dept=intent.getStringExtra("dept");
+
+
 
 
 
@@ -113,6 +113,7 @@ public class FacultyMember extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+
 
             //this method will be running on UI thread
             pdLoading.setMessage("\tLoading...");
@@ -124,10 +125,13 @@ public class FacultyMember extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             try {
+                Intent intent=getIntent();
+                String dept=intent.getStringExtra("dept");
+                Log.e("dept",dept);
 
                 // Enter URL address where your json file resides
                 // Even you can make call to php file which returns json data
-                url = new URL("http://gitapp.ravikoradiya.com/deptapi.php");
+                url = new URL("http://gitapp.ravikoradiya.com/deptapi.php?dept="+dept);
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block

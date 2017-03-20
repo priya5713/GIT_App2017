@@ -84,12 +84,37 @@ public class Department extends AppCompatActivity {
 
                     case 1:
                         Intent i2=new Intent(Department.this,FacultyMember.class);
-                        if (listDataHeader.equals("Civil Engineering"))
+                        if (listDataHeader.get(groupPosition).equals("Civil Engineering"))
                         {
-                            i2.putExtra("dept","Civil Engineering");
+                            i2.putExtra("dept","Civil%20Engineering");
                         }
-                        else {
-                            i2.putExtra("dept","Computer Engineering");
+                        else if(listDataHeader.get(groupPosition).equals("Computer Engineering"))
+                        {
+                            i2.putExtra("dept","Computer%20Engineering");
+                        }
+                        else if(listDataHeader.get(groupPosition).equals("Electronics & Comm."))
+                        {
+                            i2.putExtra("dept","Electronics%20and%20Comm.");
+                        }
+                        else if(listDataHeader.get(groupPosition).equals("Mechanical Engineering"))
+                        {
+                            i2.putExtra("dept","Mechanical%20Engineering");
+                        }
+                        else if(listDataHeader.get(groupPosition).equals("Information Technology"))
+                        {
+                            i2.putExtra("dept","Information%20Technology");
+                        }
+                        else if(listDataHeader.get(groupPosition).equals("Electrical Engineering"))
+                        {
+                            i2.putExtra("dept","Electrical%20Department");
+                        }
+                        else if(listDataHeader.get(groupPosition).equals("Mathimatics Department"))
+                        {
+                            i2.putExtra("dept","Mathematics%20Department");
+                        }
+                        else
+                        {
+                            i2.putExtra("dept","mba");
                         }
                         startActivity(i2);
                         break;
@@ -270,8 +295,8 @@ public class Department extends AppCompatActivity {
         listDataHeader.add("Electronics & Comm.");
         listDataHeader.add("Mechanical Engineering");
         listDataHeader.add("Information Technology");
+        listDataHeader.add("Electrical Engineering");
         listDataHeader.add("Mathimatics Department");
-        listDataHeader.add("Electrical Department");
         listDataHeader.add("MBA");
 
 
@@ -312,11 +337,11 @@ public class Department extends AppCompatActivity {
 //        MathimaticsDepartment.add("Lab Facilities");
         MathimaticsDepartment.add("Study Materials");
 
-        List<String> ElectricalDepartment = new ArrayList<String>();
-        ElectricalDepartment.add("About");
-        ElectricalDepartment.add("Faculty Members");
+        List<String> ElectricalEngineering = new ArrayList<String>();
+        ElectricalEngineering.add("About");
+        ElectricalEngineering.add("Faculty Members");
 //        ElectricalDepartment.add("Lab Facilities");
-        ElectricalDepartment.add("Study Materials");
+        ElectricalEngineering.add("Study Materials");
 
         List<String> Mba = new ArrayList<String>();
         Mba.add("About");
@@ -332,7 +357,7 @@ public class Department extends AppCompatActivity {
         listDataChild.put(listDataHeader.get(3), MechanicalEngineering);
         listDataChild.put(listDataHeader.get(4), InformationTechnology);
         listDataChild.put(listDataHeader.get(5), MathimaticsDepartment);
-        listDataChild.put(listDataHeader.get(6), ElectricalDepartment);
+        listDataChild.put(listDataHeader.get(6), ElectricalEngineering);
         listDataChild.put(listDataHeader.get(7), Mba);
 
     }
