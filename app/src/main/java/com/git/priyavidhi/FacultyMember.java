@@ -13,6 +13,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.model.FacultyModel;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,6 +28,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FacultyMember extends AppCompatActivity {
@@ -49,6 +53,7 @@ public class FacultyMember extends AppCompatActivity {
     }
 
     RecyclerView recyclerView;
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -78,7 +83,6 @@ public class FacultyMember extends AppCompatActivity {
         setSupportActionBar(toolbar1);
 
 
-
         recyclerView = (RecyclerView) findViewById(R.id.rFaculty);
 
 
@@ -104,12 +108,6 @@ public class FacultyMember extends AppCompatActivity {
         URL url = null;
 
 
-
-
-
-
-
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -125,13 +123,13 @@ public class FacultyMember extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             try {
-                Intent intent=getIntent();
-                String dept=intent.getStringExtra("dept");
-                Log.e("dept",dept);
+                Intent intent = getIntent();
+                String dept = intent.getStringExtra("dept");
+                Log.e("dept", dept);
 
                 // Enter URL address where your json file resides
                 // Even you can make call to php file which returns json data
-                url = new URL("http://gitapp.ravikoradiya.com/deptapi.php?dept="+dept);
+                url = new URL("http://gitapp.ravikoradiya.com/deptapi.php?dept=" + dept);
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block
@@ -200,31 +198,34 @@ public class FacultyMember extends AppCompatActivity {
 
             //this method will be running on UI thread
             pdLoading.dismiss();
-            List<Data> data = new ArrayList<>();
+            List<FacultyModel> data = new ArrayList<>();
 
+//            data = new Gson().fromJson(result, data.getClass());
+            FacultyModel facultyModel[] = new Gson().fromJson(result, FacultyModel[].class);
+            data = Arrays.asList(facultyModel);
             pdLoading.dismiss();
             try {
 
                 JSONArray jArray = new JSONArray(result);
 
                 // Extract data from json and store into ArrayList as class objects
-                for (int i = 0; i < jArray.length(); i++) {
-//                    JSONObject json_data=new JSONObject(result);
-                    JSONObject json_data = jArray.getJSONObject(i);
-                    Data fishData = new Data();
-                    fishData.fName = json_data.getString("full_name");
-                    fishData.fExp = json_data.getString("work_exp");
-                    fishData.fQualification = json_data.getString("edu_qualification");
-                    fishData.fMail = json_data.getString("email");
-                    fishData.fDesignation = json_data.getString("designation");
-
-
-                    data.add(fishData);
-                }
+//                for (int i = 0; i < jArray.length(); i++) {
+////                    JSONObject json_data=new JSONObject(result);
+//                    JSONObject json_data = jArray.getJSONObject(i);
+//                    Data fishData = new Data();
+//                    fishData.fName = json_data.getString("full_name");
+//                    fishData.fExp = json_data.getString("work_exp");
+//                    fishData.fQualification = json_data.getString("edu_qualification");
+//                    fishData.fMail = json_data.getString("email");
+//                    fishData.fDesignation = json_data.getString("designation");
+//
+//
+//                    data.add(fishData);
+//                }
 
                 // Setup and Handover data to recyclerview
                 rFaculty = (RecyclerView) findViewById(R.id.rFaculty);
-                mAdapter = new RecyclerAdapter4(FacultyMember.this,data);
+                mAdapter = new RecyclerAdapter4(FacultyMember.this, data);
                 rFaculty.setAdapter(mAdapter);
                 rFaculty.setLayoutManager(new LinearLayoutManager(FacultyMember.this));
 
@@ -240,8 +241,6 @@ public class FacultyMember extends AppCompatActivity {
         }
 
     }
-
-
 
 
     @Override
