@@ -81,11 +81,11 @@
 
 
     <TextView
-        android:text="TX-2017 Coming Soon ..ProNight with Sachin-Jigar live Concert"
+        android:text="TX-2017...Pro night with Sachin-Jigar"
         android:id="@+id/MarqueeText"
         android:layout_width="fill_parent"
-        android:layout_marginTop="30dp"
-        android:textColor="#000"
+        android:layout_marginTop="20dp"
+        android:textColor="#f10606"
         android:textStyle="bold"
         android:layout_height="wrap_content"
         android:singleLine="true"
@@ -107,6 +107,18 @@
         android:layout_marginTop="20dp"
         android:textAllCaps="false"
         android:text="Watch Institute Movie"/>
+
+
+
+
+
+    <Button
+        android:id="@+id/jazba"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jazba Registration"
+        android:layout_gravity="center"/>
 
 
 </LinearLayout>

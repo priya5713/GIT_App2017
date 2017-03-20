@@ -40,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView img_pic,ivPlus;
     private Menu menu;
     Button btnMovie;
+    Button jazba;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,15 @@ public class HomeActivity extends AppCompatActivity {
         ab.setTitle(text2);
 
         ivPlus=(ImageView)findViewById(R.id.ivPlus);
+
+        jazba=(Button) findViewById(R.id.jazba);
+        jazba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://play.google.com/store/apps/details?id=com.appteam.git.jazba16"));
+                startActivity(intent);
+            }
+        });
 
 
 
