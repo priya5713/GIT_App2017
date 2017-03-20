@@ -17,6 +17,7 @@ public class Data {
     public String fDesignation;
     public String fMail;
     public String tv1;
+    public String cUrl;
 
 
 }

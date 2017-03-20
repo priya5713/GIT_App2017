@@ -73,10 +73,10 @@ public class SplashActivity extends Activity {
 //        objectAnimator1.setDuration(3000);
 //        objectAnimator1.start();
 
-        ObjectAnimator moveAnim = ObjectAnimator.ofFloat(ivSplash, "Y", 300);
-        moveAnim.setDuration(2000);
-        moveAnim.setInterpolator(new LinearInterpolator());
-        moveAnim.start();
+//        ObjectAnimator moveAnim = ObjectAnimator.ofFloat(ivSplash, "Y", 400);
+//        moveAnim.setDuration(2000);
+//        moveAnim.setInterpolator(new LinearInterpolator());
+//        moveAnim.start();
 
 
 
