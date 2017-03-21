@@ -1,9 +1,5 @@
 package com.git.priyavidhi;
 
-/**
- * Created by Priya on 2/9/2017.
- */
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;

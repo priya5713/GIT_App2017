@@ -98,10 +98,7 @@ public class FacultyMember extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
     }
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+
     protected class AsyncLogin extends AsyncTask<String, String, String> {
         ProgressDialog pdLoading = new ProgressDialog(FacultyMember.this);
         HttpURLConnection conn;

@@ -81,7 +81,7 @@ public class SplashActivity extends Activity {
 
 
 
-        refresh_timer = new CTimer(3000, 3000);
+        refresh_timer = new CTimer(1000, 1000);
         refresh_timer.start();
 
         preferances = PreferenceManager
