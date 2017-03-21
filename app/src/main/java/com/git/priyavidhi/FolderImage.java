@@ -1,34 +1,25 @@
 package com.git.priyavidhi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class FolderImage extends AppCompatActivity {
     RecyclerView recyclerView;
-    private final String android_version_names[] = {
-            "Donut",
-            "Eclair",
-            "Froyo",
-            "Gingerbread",
-            "Honeycomb",
-            "Ice Cream Sandwich",
-            "Jelly Bean",
-            "KitKat",
-            "Lollipop",
-            "Marshmallow"
-    };
 
-    private final int[] android_image_urls = {
-            R.drawable.v1,R.drawable.v2,R.drawable.v3,R.drawable.v4,R.drawable.v5,
-            R.drawable.v6,R.drawable.v7,R.drawable.v8,R.drawable.v9,R.drawable.v10};
+
+
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -37,10 +28,23 @@ public class FolderImage extends AppCompatActivity {
                 R.anim.anim_slide_in_right,
                 R.anim.anim_slide_out_right);
     }
+
+    String[] fileNames;
+    String path;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_folder_image);
+
+        path = getIntent().getStringExtra("name");
+        try {
+            fileNames = getAssets().list("images/" + path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         initViews();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -66,33 +70,39 @@ public class FolderImage extends AppCompatActivity {
         });
     }
 
-    private void initViews(){
-        recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
+    private void initViews() {
+        recyclerView = (RecyclerView) findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),2);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
 
-        ArrayList<AndroidVersion> androidVersions = prepareData();
-        FolderImageAdapter adapter = new FolderImageAdapter(getApplicationContext(),androidVersions);
+//        ArrayList<AndroidVersion> androidVersions = prepareData();
+        FolderImageAdapter adapter = new FolderImageAdapter(getApplicationContext(), path,fileNames);
         recyclerView.setAdapter(adapter);
 
     }
-    private ArrayList<AndroidVersion> prepareData(){
 
-        ArrayList<AndroidVersion> android_version = new ArrayList<>();
-        for(int i=0;i<android_version_names.length;i++){
-            AndroidVersion androidVersion = new AndroidVersion();
-            androidVersion.setAndroid_version_name(android_version_names[i]);
-            androidVersion.setAndroid_image_url(android_image_urls[i]);
-            android_version.add(androidVersion);
-        }
-        return android_version;
-    }
+//    private ArrayList<AndroidVersion> prepareData() {
+//
+//
+//        Intent intent = getIntent();
+//        String name = intent.getStringExtra("name");
+//        Log.e("name", name);
+//
+//        ArrayList<AndroidVersion> android_version = new ArrayList<>();
+//        for (int i = 0; i < fileNames.length; i++) {
+//            AndroidVersion androidVersion = new AndroidVersion();
+//            androidVersion.setAndroid_version_name(android_version_names[i]);
+//            androidVersion.setAndroid_image_url(android_image_urls[i]);
+//            android_version.add(androidVersion);
+//        }
+//        return android_version;
+//    }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item != null && item.getItemId() ==R.id.home) {
+        if (item != null && item.getItemId() == R.id.home) {
             finish();
             overridePendingTransition(
                     R.anim.anim_slide_in_right,

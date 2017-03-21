@@ -6,7 +6,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+
+import java.io.IOException;
 
 public class ViewPage extends AppCompatActivity {
     @Override
@@ -22,10 +25,20 @@ public class ViewPage extends AppCompatActivity {
     ViewPager viewPager;
     PagerAdapter adapter;
     int[] flag;
+    String[] fileNames;
+    String path;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_page);
+        path = getIntent().getStringExtra("path");
+        Log.e("path",path);
+        try {
+            fileNames = getAssets().list("images/" + path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -41,12 +54,12 @@ public class ViewPage extends AppCompatActivity {
 
         int v1=getIntent().getIntExtra("pos",0);
 
-        flag = new int[] {  R.drawable.v1,R.drawable.v2,R.drawable.v3,R.drawable.v4,R.drawable.v5,
-                R.drawable.v6,R.drawable.v7,R.drawable.v8,R.drawable.v9,R.drawable.v10 };
+//        flag = new int[] {  R.drawable.v1,R.drawable.v2,R.drawable.v3,R.drawable.v4,R.drawable.v5,
+//                R.drawable.v6,R.drawable.v7,R.drawable.v8,R.drawable.v9,R.drawable.v10 };
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         // Pass results to ViewPagerAdapter Class
-        adapter = new ViewPageAdapter(ViewPage.this,  flag);
+        adapter = new ViewPageAdapter(ViewPage.this,path,fileNames);
         // Binds the Adapter to the ViewPager
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(v1);

@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by vidhi on 2/9/2017.
  */
@@ -16,19 +18,23 @@ import android.widget.RelativeLayout;
 public class ViewPageAdapter extends PagerAdapter {
     // Declare Variables
     Context context;
-    int[] flag;
+    private String path;
+    private String[] filenames;
+//    String[] flag;
     int v;
     LayoutInflater inflater;
 
-    public ViewPageAdapter(Context context,int[] flag) {
+    public ViewPageAdapter(Context context, String path, String[] filenames) {
         this.context = context;
+        this.path = path;
+        this.filenames = filenames;
 
-        this.flag = flag;
+//        this.flag = flag;
     }
 
     @Override
     public int getCount() {
-        return flag.length;
+        return filenames.length;
 //        return 1;
     }
 
@@ -52,7 +58,10 @@ public class ViewPageAdapter extends PagerAdapter {
         // Locate the ImageView in viewpager_item.xml
         imgflag = (ImageView) itemView.findViewById(R.id.img_android);
         // Capture position and set to the ImageView
-        imgflag.setImageResource(flag[position]);
+
+        Picasso.with(context).load("file:///android_asset/images/" + path + "/" + filenames[position]).resize(240, 120).into(imgflag);
+//        imgflag.setImageResource("file:///android_asset/images/" + path + "/" + filenames[position]);
+//        imgflag.setImageResource(Integer.parseInt(filenames[position]));
         ((ViewPager) container).addView(itemView);
 
         return itemView;
