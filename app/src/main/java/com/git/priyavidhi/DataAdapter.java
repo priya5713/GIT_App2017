@@ -41,7 +41,10 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         Picasso.with(context).load(android.get(i).getAndroid_image_url()).resize(200, 150).into(viewHolder.img_android);
         viewHolder.tv_android.setText(android.get(i).getAndroid_version_name());
+
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -59,18 +62,31 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             tv_android = (TextView)view.findViewById(R.id.tv_android);
             img_android = (ImageView) view.findViewById(R.id.img_android);
 
-            img_android.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i=new Intent(context,FolderImage.class);
-//                    i.putExtra("pos",getAdapterPosition());
+                    i.putExtra("pos",getAdapterPosition());
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(i);
-//                    Toast.makeText(context.getApplicationContext(),"helloo",Toast.LENGTH_SHORT).show();
-
                 }
             });
+
+//            img_android.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent i=new Intent(context,FolderImage.class);
+////                    i.putExtra("pos",getAdapterPosition());
+//                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    context.startActivity(i);
+////                    Toast.makeText(context.getApplicationContext(),"helloo",Toast.LENGTH_SHORT).show();
+//
+//                }
+//            });
+
         }
+
+
 
     }
 
