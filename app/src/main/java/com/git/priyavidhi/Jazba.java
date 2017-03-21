@@ -3,21 +3,19 @@ package com.git.priyavidhi;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.TextView;
 
 
 public class Jazba extends AppCompatActivity {
 
     TextView jazba;
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -45,8 +43,7 @@ public class Jazba extends AppCompatActivity {
         ab.setTitle("Jazba");
 
 
-
-        jazba=(TextView) findViewById(R.id.jazba);
+        jazba = (TextView) findViewById(R.id.jazba);
         jazba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,10 +61,8 @@ public class Jazba extends AppCompatActivity {
         webView.loadData(text, "text/html", "utf-8");
 
 
-
-
-
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {

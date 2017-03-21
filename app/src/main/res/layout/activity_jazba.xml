@@ -38,16 +38,15 @@
     <include layout="@layout/content_jazba" />
 
     <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Jazba Registration here.."-->
-        <!--android:layout_gravity="center"-->
-        <!--android:paddingTop="150sp"-->
-        <!--android:id="@+id/jazba"-->
-        <!--android:textStyle="italic"-->
-        <!--android:textColor="#c20c0c"-->
-        <!--android:textSize="20sp"/>-->
-
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Jazba Registration here.."-->
+    <!--android:layout_gravity="center"-->
+    <!--android:paddingTop="150sp"-->
+    <!--android:id="@+id/jazba"-->
+    <!--android:textStyle="italic"-->
+    <!--android:textColor="#c20c0c"-->
+    <!--android:textSize="20sp"/>-->
 
 
 </android.support.design.widget.CoordinatorLayout>

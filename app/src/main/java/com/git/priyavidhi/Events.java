@@ -47,8 +47,8 @@ public class Events extends AppCompatActivity {
     Context context;
 
     ArrayList prgmName;
-    public static int [] prgmImages={R.drawable.jazba,R.drawable.tx,R.drawable.navratri,R.drawable.sport};
-    public static String [] prgmNameList={"Jazba (Annual Cultural Festival)","Tech-Xtreme (Annual Tech-Fest)","Ratri B4 Navratri","Annual Sports"};
+    public static int[] prgmImages = {R.drawable.jazba, R.drawable.tx, R.drawable.navratri, R.drawable.sport};
+    public static String[] prgmNameList = {"Jazba (Annual Cultural Festival)", "Tech-Xtreme (Annual Tech-Fest)", "Ratri B4 Navratri", "Annual Sports"};
 
 
     @Override
@@ -56,25 +56,24 @@ public class Events extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus = (ImageView) findViewById(R.id.ivPlus);
         ivPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(Events.this,HomeActivity.class);
+                Intent i1 = new Intent(Events.this, HomeActivity.class);
                 startActivity(i1);
                 finish();
             }
         });
 
-        context=this;
+        context = this;
 
-        recyclerView= (RecyclerView) findViewById(R.id.my_recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        RecyclerAdapter3 adapter=new RecyclerAdapter3(this);
+        RecyclerAdapter3 adapter = new RecyclerAdapter3(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
 
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
@@ -99,13 +98,13 @@ public class Events extends AppCompatActivity {
 
 
         Menu m = navigationView.getMenu();
-        for (int i=0;i<m.size();i++) {
+        for (int i = 0; i < m.size(); i++) {
             MenuItem mi = m.getItem(i);
 
             //for aapplying a font to subMenu ...
             SubMenu subMenu = mi.getSubMenu();
-            if (subMenu!=null && subMenu.size() >0 ) {
-                for (int j=0; j <subMenu.size();j++) {
+            if (subMenu != null && subMenu.size() > 0) {
+                for (int j = 0; j < subMenu.size(); j++) {
                     MenuItem subMenuItem = subMenu.getItem(j);
                     applyFontToMenuItem(subMenuItem);
                 }
@@ -203,7 +202,6 @@ public class Events extends AppCompatActivity {
                         break;
 
 
-
                     case R.id.nav_Share:
                         try {
                             Intent i = new Intent(Intent.ACTION_SEND);
@@ -227,9 +225,10 @@ public class Events extends AppCompatActivity {
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/proximanova-semibold-webfont.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mNewTitle.setSpan(new CustomTypefaceSpan("", font), 0, mNewTitle.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {

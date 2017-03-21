@@ -10,33 +10,29 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jazba Registration here.."
-        android:layout_gravity="center"
-        android:paddingTop="150sp"
-        android:id="@+id/jazba"
-        android:textStyle="italic"
-        android:textColor="#c20c0c"
-        android:textSize="20sp"/>
-
+        <TextView
+            android:id="@+id/jazba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="150sp"
+            android:text="Jazba Registration here.."
+            android:textColor="#c20c0c"
+            android:textSize="20sp"
+            android:textStyle="italic" />
 
 
+        <WebView
+            android:id="@+id/wv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:textSize="15dp"></WebView>
 
-    <WebView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:id="@+id/wv1"
-        android:layout_gravity="center"
-        android:padding="5dp">
-    </WebView>
-
-    <!--<Button-->
+        <!--<Button-->
         <!--android:id="@+id/jazba"-->
         <!--android:layout_marginTop="20dp"-->
         <!--android:layout_width="wrap_content"-->
@@ -44,9 +40,7 @@
         <!--android:text="Jazba Registration"-->
         <!--android:layout_gravity="center"/>-->
 
-</RelativeLayout>
-
-
+    </RelativeLayout>
 
 
 </android.support.v4.widget.NestedScrollView>
