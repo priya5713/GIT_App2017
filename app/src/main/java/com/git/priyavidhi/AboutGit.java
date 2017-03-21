@@ -212,9 +212,9 @@ public class AboutGit extends AppCompatActivity {
                         try {
                             Intent i = new Intent(Intent.ACTION_SEND);
                             i.setType("text/plain");
-                            i.putExtra(Intent.EXTRA_SUBJECT, "Garagewala");
+                            i.putExtra(Intent.EXTRA_SUBJECT, "GIT");
                             String sAux = "\nLet me recommend you this application\n\n";
-                            sAux = sAux + "https://play.google.com/store/apps/details?id=com.androidappbazzar.garagefinder \n\n";
+                            sAux = sAux + "https://play.google.com/store/apps/details?id=com.git.priyavidhi \n\n";
                             i.putExtra(Intent.EXTRA_TEXT, sAux);
                             startActivity(Intent.createChooser(i, "choose one"));
                         } catch (Exception e) { //e.toString();
