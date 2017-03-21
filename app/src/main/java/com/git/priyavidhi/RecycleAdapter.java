@@ -44,7 +44,7 @@ class RecyclerAdapter extends  RecyclerView.Adapter<RecyclerViewHolder> {
 
 
     @Override
-    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerViewHolder holder, final int position) {
 
 
         RecyclerViewHolder myHolder= (RecyclerViewHolder) holder;
@@ -52,56 +52,17 @@ class RecyclerAdapter extends  RecyclerView.Adapter<RecyclerViewHolder> {
         myHolder.cDate.setText(current.cDate);
         myHolder.cTitle.setText(current.cTitle);
 
-    }
-
-
-
-    private View.OnClickListener clickListener=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://sites.google.com/a/git.org.in/it/"));
-            context.startActivity(intent);
-
-
-
-//            int position = vholder.getPosition();
-
-//            switch (position) {
-
-
-//
-//                case 0:
-//                    final Intent intent = new Intent(context, Jazba.class);
-//                    context.startActivity(intent);
-//                    break;
-//
-//
-//
-//
-//                case 1:
-//                    final Intent intent1 = new Intent(context, RatriB4Navratri.class);
-//                    context.startActivity(intent1);
-//                    break;
-//
-//
-//                case 2:
-//                    final Intent intent2 = new Intent(context, RatriB4Navratri.class);
-//                    context.startActivity(intent2);
-//                    break;
-//
-//
-//                case 3:
-//                    final Intent intent3 = new Intent(context, AnnualSports.class);
-//                    context.startActivity(intent3);
-//                    break;
-
-
+        myHolder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = data.get(position).cUrl;
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                context.startActivity(i);
             }
+        });
 
-    };
-
-
-
+    }
 
     @Override
     public int getItemCount() {

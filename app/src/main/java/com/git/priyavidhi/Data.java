@@ -20,4 +20,7 @@ public class Data {
     public String cUrl;
 
 
+    public Object cUrl(Object circular_url) {
+        return circular_url;
+    }
 }

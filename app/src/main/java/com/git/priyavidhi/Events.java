@@ -217,7 +217,6 @@ public class Events extends AppCompatActivity {
                         }
                         break;
 
-
                 }
                 mDrawerLayout.closeDrawer(navigationView);
                 return true;

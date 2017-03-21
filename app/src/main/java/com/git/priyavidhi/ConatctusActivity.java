@@ -68,9 +68,9 @@ public class ConatctusActivity extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:9904405900"));
-                startActivity(callIntent);
+                Intent callIntent1 = new Intent(Intent.ACTION_CALL);
+                callIntent1.setData(Uri.parse("tel:9904405900"));
+                startActivity(callIntent1);
             }
         });
         fb=(Button)findViewById(R.id.fb);
@@ -106,6 +106,16 @@ public class ConatctusActivity extends AppCompatActivity {
                 startActivity(callIntent);
             }
         });
+
+//        Button dev;
+//        dev=(Button) findViewById(R.id.dev);
+//        dev.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(ConatctusActivity.this,Developer.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         Spannable text2 = new SpannableString(ab.getTitle());

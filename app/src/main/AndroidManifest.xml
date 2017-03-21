@@ -122,6 +122,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DesignDemo"
             android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".Developer"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".WalkThrought1Activity"
             android:screenOrientation="portrait"
@@ -154,8 +159,8 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-
+<!---->
+        <!--<activity android:name=".Developer"></activity>-->
     </application>
 
 </manifest>
