@@ -126,7 +126,7 @@ public class Department extends AppCompatActivity {
 
                     case 2:
 
-                        Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://sites.google.com/a/git.org.in/it/"));
+                        Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://sites.google.com/a/git.org.in/sites/system/app/pages/meta/dashboard/categories"));
                         startActivity(intent);
                         break;
                 }
