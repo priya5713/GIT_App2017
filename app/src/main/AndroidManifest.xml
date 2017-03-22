@@ -142,7 +142,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name="eu.janmuller.android.simplecropimage.CropImage" />
 
         <provider
             android:name=".InternalStorageContentProvider"

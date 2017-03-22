@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView img_pic,ivPlus;
     private Menu menu;
     Button btnMovie;
-    Button jazba;
+    Button btnJazba;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +67,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        btnJazba=(Button)findViewById(R.id.btnJazba);
+
+        btnJazba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://play.google.com/store/apps/details?id=com.appteam.git.jazba16"));
+                startActivity(intent);
+            }
+        });
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
