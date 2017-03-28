@@ -1,5 +1,4 @@
 package com.git.priyavidhi;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -21,11 +20,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comman.CustomTypefaceSpan;
-
-
-/**
- * Created by Sp on 23-Nov-15.
- */
 public class HomeActivity extends AppCompatActivity {
 
     public static ImageView ivListGrid;
@@ -36,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
     private String username, picture, user_type;
     private boolean login_flag;
     private View headerLayout;
-    private TextView Title;
+    private TextView MarqueeText;
     private ImageView img_pic,ivPlus;
     private Menu menu;
     Button btnMovie;
@@ -46,7 +40,6 @@ public class HomeActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
 
 
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
@@ -76,6 +69,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        MarqueeText=(TextView)findViewById(R.id.MarqueeText);
+        MarqueeText.setText("Project Fair of 8th Semester student");
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
