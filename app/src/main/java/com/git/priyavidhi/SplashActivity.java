@@ -24,7 +24,7 @@ public class SplashActivity extends Activity {
     String walkthrought;
     boolean login_flag, skip;
     SharedPreferences preferances;
-    TextView tvSplash,tvSplash1,tvSplash2;
+    TextView tvSplash, tvSplash1, tvSplash2;
     Animation animZoomOut;
     ImageView ivSplash;
 
@@ -34,9 +34,9 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        tvSplash=(TextView)findViewById(R.id.tvSplash);
+        tvSplash = (TextView) findViewById(R.id.tvSplash);
 
-        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(tvSplash, "rotation", 360f,0f);
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(tvSplash, "rotation", 360f, 0f);
         objectAnimator.setDuration(3000);
         ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(tvSplash, "scaleX", 2.5f);
         ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(tvSplash, "scaleY", 2.5f);
@@ -45,9 +45,9 @@ public class SplashActivity extends Activity {
         scaleDown.play(objectAnimator).with(scaleDownY).with(scaleDownX);
         scaleDown.start();
 
-        tvSplash1=(TextView)findViewById(R.id.tvSplash1);
+        tvSplash1 = (TextView) findViewById(R.id.tvSplash1);
 
-        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(tvSplash1, "rotation", 360f,0f);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(tvSplash1, "rotation", 360f, 0f);
         objectAnimator2.setDuration(3000);
         ObjectAnimator scaleDownX2 = ObjectAnimator.ofFloat(tvSplash1, "scaleX", 2.5f);
         ObjectAnimator scaleDownY2 = ObjectAnimator.ofFloat(tvSplash1, "scaleY", 2.5f);
@@ -56,9 +56,9 @@ public class SplashActivity extends Activity {
         scaleDown2.play(objectAnimator2).with(scaleDownY2).with(scaleDownX2);
         scaleDown2.start();
 
-        tvSplash2=(TextView)findViewById(R.id.tvSplash2);
+        tvSplash2 = (TextView) findViewById(R.id.tvSplash2);
 
-        ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(tvSplash2, "rotation", 360f,0f);
+        ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(tvSplash2, "rotation", 360f, 0f);
         objectAnimator3.setDuration(3000);
         ObjectAnimator scaleDownX3 = ObjectAnimator.ofFloat(tvSplash2, "scaleX", 2.5f);
         ObjectAnimator scaleDownY3 = ObjectAnimator.ofFloat(tvSplash2, "scaleY", 2.5f);
@@ -67,7 +67,7 @@ public class SplashActivity extends Activity {
         scaleDown3.play(objectAnimator3).with(scaleDownY3).with(scaleDownX3);
         scaleDown3.start();
 
-        ivSplash=(ImageView)findViewById(R.id.ivSplash);
+        ivSplash = (ImageView) findViewById(R.id.ivSplash);
 
 //        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(ivSplash, "rotation", 360f,0f);
 //        objectAnimator1.setDuration(3000);
@@ -77,8 +77,6 @@ public class SplashActivity extends Activity {
 //        moveAnim.setDuration(2000);
 //        moveAnim.setInterpolator(new LinearInterpolator());
 //        moveAnim.start();
-
-
 
 
         refresh_timer = new CTimer(3000, 3000);
@@ -122,7 +120,7 @@ public class SplashActivity extends Activity {
                         overridePendingTransition(
                                 R.anim.anim_slide_in_left,
                                 R.anim.anim_slide_out_left);
-                    }else{
+                    } else {
                         finish();
                         startActivity(new Intent(SplashActivity.this,
                                 HomeActivity.class));

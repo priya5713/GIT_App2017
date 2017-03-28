@@ -42,7 +42,6 @@ import java.util.List;
 public class NewsFeed extends AppCompatActivity {
 
 
-
     private DrawerLayout mDrawerLayout;
     NavigationView navigationView;
     private View headerLayout;
@@ -66,7 +65,7 @@ public class NewsFeed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_feed);
-        recyclerView= (RecyclerView)findViewById(R.id.rNews);
+        recyclerView = (RecyclerView) findViewById(R.id.rNews);
 //     RecyclerAdapter adapter=new RecyclerAdapter(this,mAdapter);
 //        recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
@@ -88,11 +87,11 @@ public class NewsFeed extends AppCompatActivity {
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
 
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus = (ImageView) findViewById(R.id.ivPlus);
         ivPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(NewsFeed.this,HomeActivity.class);
+                Intent i1 = new Intent(NewsFeed.this, HomeActivity.class);
                 startActivity(i1);
                 finish();
             }
@@ -107,13 +106,13 @@ public class NewsFeed extends AppCompatActivity {
 
 
         Menu m = navigationView.getMenu();
-        for (int i=0;i<m.size();i++) {
+        for (int i = 0; i < m.size(); i++) {
             MenuItem mi = m.getItem(i);
 
             //for aapplying a font to subMenu ...
             SubMenu subMenu = mi.getSubMenu();
-            if (subMenu!=null && subMenu.size() >0 ) {
-                for (int j=0; j <subMenu.size();j++) {
+            if (subMenu != null && subMenu.size() > 0) {
+                for (int j = 0; j < subMenu.size(); j++) {
                     MenuItem subMenuItem = subMenu.getItem(j);
                     applyFontToMenuItem(subMenuItem);
                 }
@@ -209,7 +208,6 @@ public class NewsFeed extends AppCompatActivity {
                                 R.anim.anim_slide_in_left,
                                 R.anim.anim_slide_out_left);
                         break;
-
 
 
                     case R.id.nav_Share:
@@ -365,9 +363,10 @@ public class NewsFeed extends AppCompatActivity {
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/proximanova-semibold-webfont.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mNewTitle.setSpan(new CustomTypefaceSpan("", font), 0, mNewTitle.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {
@@ -381,8 +380,6 @@ public class NewsFeed extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 
 
 }

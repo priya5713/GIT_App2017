@@ -6,17 +6,15 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.git.priyavidhi.Tx"
-    tools:showIn="@layout/activity_tx"
-    >
+    tools:showIn="@layout/activity_tx">
 
     <WebView
+        android:id="@+id/wv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:id="@+id/wv1"
         android:layout_gravity="center"
-        android:padding="5dp">
-    </WebView>
+        android:padding="5dp"
+        android:textSize="15dp"></WebView>
 
 
 </android.support.v4.widget.NestedScrollView>

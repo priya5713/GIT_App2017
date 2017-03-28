@@ -21,13 +21,13 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_action_action_home"
             android:title="Home"
-            foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+            foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
 
         <item
             android:id="@+id/nav_aboutGit"
             android:icon="@drawable/ic_action_navigation_menu"
             android:title="About GIT"
-            foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+            foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
 
 
         <item
@@ -44,19 +44,19 @@
             android:id="@+id/nav_newsFeed"
             android:icon="@drawable/ic_chrome_reader_mode_black_24dp"
             android:title="News Feed"
-            foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+            foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
 
         <item
             android:id="@+id/nav_event"
             android:icon="@drawable/ic_event_black_24dp"
             android:title="Events"
-            foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+            foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
 
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_perm_media_black_24dp"
             android:title="Gallery"
-            foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+            foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
         <item
             android:id="@+id/nav_contactus"
             android:icon="@drawable/ic_contacts_black_24dp"

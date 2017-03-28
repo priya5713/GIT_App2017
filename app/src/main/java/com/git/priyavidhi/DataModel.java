@@ -16,7 +16,7 @@ public class DataModel {
         this.name = name;
         this.version = version;
         this.id_ = id_;
-        this.image=image;
+        this.image = image;
     }
 
     public String getName() {

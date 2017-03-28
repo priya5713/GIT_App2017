@@ -1,4 +1,5 @@
 package com.git.priyavidhi;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -20,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comman.CustomTypefaceSpan;
+
 public class HomeActivity extends AppCompatActivity {
 
     public static ImageView ivListGrid;
@@ -31,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     private boolean login_flag;
     private View headerLayout;
     private TextView MarqueeText;
-    private ImageView img_pic,ivPlus;
+    private ImageView img_pic, ivPlus;
     private Menu menu;
     Button btnMovie;
     Button btnJazba;
@@ -50,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setTitle("Home");
 
-        btnMovie=(Button)findViewById(R.id.btnMovie);
+        btnMovie = (Button) findViewById(R.id.btnMovie);
 
         btnMovie.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        btnJazba=(Button)findViewById(R.id.btnJazba);
+        btnJazba = (Button) findViewById(R.id.btnJazba);
 
         btnJazba.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,15 +72,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        MarqueeText=(TextView)findViewById(R.id.MarqueeText);
+        MarqueeText = (TextView) findViewById(R.id.MarqueeText);
         MarqueeText.setText("Project Fair of 8th Semester student");
         Spannable text2 = new SpannableString(ab.getTitle());
         text2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         ab.setTitle(text2);
 
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
-
-
+        ivPlus = (ImageView) findViewById(R.id.ivPlus);
 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -90,13 +90,13 @@ public class HomeActivity extends AppCompatActivity {
 
 
         Menu m = navigationView.getMenu();
-        for (int i=0;i<m.size();i++) {
+        for (int i = 0; i < m.size(); i++) {
             MenuItem mi = m.getItem(i);
 
             //for aapplying a font to subMenu ...
             SubMenu subMenu = mi.getSubMenu();
-            if (subMenu!=null && subMenu.size() >0 ) {
-                for (int j=0; j <subMenu.size();j++) {
+            if (subMenu != null && subMenu.size() > 0) {
+                for (int j = 0; j < subMenu.size(); j++) {
                     MenuItem subMenuItem = subMenu.getItem(j);
                     applyFontToMenuItem(subMenuItem);
                 }
@@ -194,7 +194,6 @@ public class HomeActivity extends AppCompatActivity {
                         break;
 
 
-
                     case R.id.nav_Share:
                         try {
                             Intent i = new Intent(Intent.ACTION_SEND);
@@ -219,9 +218,10 @@ public class HomeActivity extends AppCompatActivity {
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/proximanova-semibold-webfont.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mNewTitle.setSpan(new CustomTypefaceSpan("", font), 0, mNewTitle.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {

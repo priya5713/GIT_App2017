@@ -40,6 +40,7 @@ public class AboutGit extends AppCompatActivity {
     private View headerLayout;
     private TextView UserName;
     private Menu menu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,12 +61,11 @@ public class AboutGit extends AppCompatActivity {
         ab.setTitle(text2);
 
 
-
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus = (ImageView) findViewById(R.id.ivPlus);
         ivPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(AboutGit.this,HomeActivity.class);
+                Intent i1 = new Intent(AboutGit.this, HomeActivity.class);
                 startActivity(i1);
                 finish();
             }
@@ -79,38 +79,36 @@ public class AboutGit extends AppCompatActivity {
                 navigationView.inflateHeaderView(R.layout.nav_header);
 
 
-        WebView webView=(WebView)findViewById(R.id.wv1);
+        WebView webView = (WebView) findViewById(R.id.wv1);
 
         String text = "<html><body>"
-                +"<p align=\"justify\">"
-                +"<b>"
-                +"Gandhinagar Institute of Technology was established by Platinum Foundation Trust in December 2006. The Institute is affiliated to Gujarat Technological University and approved by AICTE New Delhi."
-                +"</b>"
-                +"</p>"
-                +"<p align=\"justify\">"
-                +"The Trust is registered under Public Trust Act, having Registration No. E-17490 dated 19 June 2006 at Ahmedabad, Gujarat.\n" +
+                + "<p align=\"justify\">"
+                + "<b>"
+                + "Gandhinagar Institute of Technology was established by Platinum Foundation Trust in December 2006. The Institute is affiliated to Gujarat Technological University and approved by AICTE New Delhi."
+                + "</b>"
+                + "</p>"
+                + "<p align=\"justify\">"
+                + "The Trust is registered under Public Trust Act, having Registration No. E-17490 dated 19 June 2006 at Ahmedabad, Gujarat.\n" +
                 "\n" +
                 "The Institute aims to be a leading center for research and engineering study, pursuing knowledge in both fundamental and applied area, and collaborating closely with business and industry in promoting technological innovation and economic development. The members of the trust are involved in the social activities and are also promoting the technical interestof the state and country by contributing to the technical institution development.\n" +
                 "\n" +
                 "Gandhinagar Institute of Technology is situated near Village \"Moti Bhoyan\" and 24 km away from Ahmedabad city.\n" +
                 "\n" +
                 "It offers B.E Program in Mechanical Engineering, Civil Engineering, Electrical Engineering, Computer Engineering, Information Technology and Electronics & Communication Engineering. It also offers M.E. in Mechanical Engineering with specialization in Thermal Engineering and CAD / CAM and M.E. in Software Engineering in Computer Engineering. It also offers MBA  Program with specialization  in Marketing, Finance, Human Resource and Information Systems. Gandhinagar Institute of Technology will nurture the intellectual growth of its students and serve humanity through creation, application and dissemination of knowledge relevant to technology and become one of the premier Engineering and Management Institutes and achieve the highest order of excellence in teaching."
-                +"</p>"
+                + "</p>"
                 + "</body></html>";
 
         webView.loadData(text, "text/html", "utf-8");
 
 
-
-
         Menu m = navigationView.getMenu();
-        for (int i=0;i<m.size();i++) {
+        for (int i = 0; i < m.size(); i++) {
             MenuItem mi = m.getItem(i);
 
             //for aapplying a font to subMenu ...
             SubMenu subMenu = mi.getSubMenu();
-            if (subMenu!=null && subMenu.size() >0 ) {
-                for (int j=0; j <subMenu.size();j++) {
+            if (subMenu != null && subMenu.size() > 0) {
+                for (int j = 0; j < subMenu.size(); j++) {
                     MenuItem subMenuItem = subMenu.getItem(j);
                     applyFontToMenuItem(subMenuItem);
                 }
@@ -232,9 +230,10 @@ public class AboutGit extends AppCompatActivity {
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/proximanova-semibold-webfont.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mNewTitle.setSpan(new CustomTypefaceSpan("", font), 0, mNewTitle.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {

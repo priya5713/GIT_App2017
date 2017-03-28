@@ -10,15 +10,16 @@ import android.widget.TextView;
 
 public class WalkThrought2Activity extends Activity {
 
-    private TextView tvSkip,tvNext;
+    private TextView tvSkip, tvNext;
     SharedPreferences preferances;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_walkthrought2);
 
-        tvSkip=(TextView)findViewById(R.id.tvSkip);
-        tvNext=(TextView)findViewById(R.id.tvNext);
+        tvSkip = (TextView) findViewById(R.id.tvSkip);
+        tvNext = (TextView) findViewById(R.id.tvNext);
         preferances = PreferenceManager
                 .getDefaultSharedPreferences(WalkThrought2Activity.this);
 

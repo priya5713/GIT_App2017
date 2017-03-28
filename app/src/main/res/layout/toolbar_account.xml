@@ -61,8 +61,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
         android:background="@drawable/bg"
+        android:clipToPadding="false"
         android:paddingTop="?attr/actionBarSize">
 
         <LinearLayout
@@ -87,7 +87,7 @@
                     <ImageView
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:background="@drawable/ic_profile"/>
+                        android:background="@drawable/ic_profile" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -107,7 +107,7 @@
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:textSize="15sp"
-                        foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+                        foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
                 </LinearLayout>
 
                 <View
@@ -129,13 +129,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00ffffff"
+                        android:enabled="false"
                         android:hint="Email"
                         android:padding="15dip"
-                        android:enabled="false"
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:textSize="15sp"
-                        foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+                        foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
                 </LinearLayout>
 
                 <View
@@ -163,7 +163,7 @@
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:textSize="15sp"
-                        foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+                        foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
                 </LinearLayout>
 
                 <View
@@ -242,28 +242,28 @@
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textSize="15sp"
-                    foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+                    foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
 
-              <!--  <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-2dip"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                <!--  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="-2dip"
+                      android:gravity="center"
+                      android:orientation="horizontal"
+                      android:weightSum="1">
 
-                    <Spinner
-                        android:id="@+id/spCity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dip"
-                        android:background="#00ffffff"
-                        android:hint="City"
-                        android:inputType="number"
-                        android:maxLength="10"
-                        android:textColor="@color/primary_text"
-                        android:textSize="12sp" />
-                </LinearLayout>-->
+                      <Spinner
+                          android:id="@+id/spCity"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="5dip"
+                          android:background="#00ffffff"
+                          android:hint="City"
+                          android:inputType="number"
+                          android:maxLength="10"
+                          android:textColor="@color/primary_text"
+                          android:textSize="12sp" />
+                  </LinearLayout>-->
 
                 <View
                     android:layout_width="match_parent"
@@ -285,13 +285,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00ffffff"
-                        android:text="Change password"
                         android:padding="15dip"
+                        android:text="Change password"
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:textSize="15sp"
-                        foo:customFont="fonts/proximanova-semibold-webfont.ttf"/>
+                        foo:customFont="fonts/proximanova-semibold-webfont.ttf" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dip"

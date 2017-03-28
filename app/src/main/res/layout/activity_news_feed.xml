@@ -7,10 +7,8 @@
     android:fitsSystemWindows="true">
 
 
+    <include layout="@layout/toolbar_news" />
 
-
-
-    <include layout="@layout/toolbar_news"/>
     <include layout="@layout/toolbar" />
 
 

@@ -11,15 +11,15 @@ import android.widget.TextView;
 
 class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
-    TextView cDate,cTitle,cUrl;
+    TextView cDate, cTitle, cUrl;
     ImageView imageView;
 
     public RecyclerViewHolder(View itemView) {
         super(itemView);
 
-        cDate= (TextView) itemView.findViewById(R.id.cDate);
-        cTitle= (TextView) itemView.findViewById(R.id.cTitle);
-        imageView= (ImageView) itemView.findViewById(R.id.list_avatar);
+        cDate = (TextView) itemView.findViewById(R.id.cDate);
+        cTitle = (TextView) itemView.findViewById(R.id.cTitle);
+        imageView = (ImageView) itemView.findViewById(R.id.list_avatar);
 //        cUrl=(ImageView) itemView.findViewById(R.id.cUrl);
     }
 }

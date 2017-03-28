@@ -9,12 +9,11 @@
     tools:showIn="@layout/activity_ratri_b4_navratri">
 
     <WebView
+        android:id="@+id/wv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:id="@+id/wv1"
         android:layout_gravity="center"
-        android:padding="5dp">
-    </WebView>
+        android:padding="5dp"
+        android:textSize="15dp"></WebView>
 
 </android.support.v4.widget.NestedScrollView>

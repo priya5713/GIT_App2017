@@ -18,8 +18,6 @@ public class FolderImage extends AppCompatActivity {
     RecyclerView recyclerView;
 
 
-
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -77,7 +75,7 @@ public class FolderImage extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
 //        ArrayList<AndroidVersion> androidVersions = prepareData();
-        FolderImageAdapter adapter = new FolderImageAdapter(getApplicationContext(), path,fileNames);
+        FolderImageAdapter adapter = new FolderImageAdapter(getApplicationContext(), path, fileNames);
         recyclerView.setAdapter(adapter);
 
     }

@@ -35,7 +35,7 @@ public class ConatctusActivity extends AppCompatActivity {
     private TextView UserName;
     private Menu menu;
 
-    Button gmail,call,fb,twit,fax;
+    Button gmail, call, fb, twit, fax;
 
 
     @Override
@@ -52,7 +52,7 @@ public class ConatctusActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setTitle("Contact us");
 
-        gmail=(Button)findViewById(R.id.gmail);
+        gmail = (Button) findViewById(R.id.gmail);
 
         gmail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +63,7 @@ public class ConatctusActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        call=(Button)findViewById(R.id.call);
+        call = (Button) findViewById(R.id.call);
 
         call.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +73,7 @@ public class ConatctusActivity extends AppCompatActivity {
                 startActivity(callIntent1);
             }
         });
-        fb=(Button)findViewById(R.id.fb);
+        fb = (Button) findViewById(R.id.fb);
 
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +84,7 @@ public class ConatctusActivity extends AppCompatActivity {
 
             }
         });
-        twit=(Button)findViewById(R.id.twit);
+        twit = (Button) findViewById(R.id.twit);
 
         twit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +96,7 @@ public class ConatctusActivity extends AppCompatActivity {
 
             }
         });
-        fax=(Button)findViewById(R.id.fax);
+        fax = (Button) findViewById(R.id.fax);
 
         fax.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,11 +123,11 @@ public class ConatctusActivity extends AppCompatActivity {
         ab.setTitle(text2);
 
 
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus = (ImageView) findViewById(R.id.ivPlus);
         ivPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(ConatctusActivity.this,HomeActivity.class);
+                Intent i1 = new Intent(ConatctusActivity.this, HomeActivity.class);
                 startActivity(i1);
                 finish();
             }
@@ -142,13 +142,13 @@ public class ConatctusActivity extends AppCompatActivity {
 
 
         Menu m = navigationView.getMenu();
-        for (int i=0;i<m.size();i++) {
+        for (int i = 0; i < m.size(); i++) {
             MenuItem mi = m.getItem(i);
 
             //for aapplying a font to subMenu ...
             SubMenu subMenu = mi.getSubMenu();
-            if (subMenu!=null && subMenu.size() >0 ) {
-                for (int j=0; j <subMenu.size();j++) {
+            if (subMenu != null && subMenu.size() > 0) {
+                for (int j = 0; j < subMenu.size(); j++) {
                     MenuItem subMenuItem = subMenu.getItem(j);
                     applyFontToMenuItem(subMenuItem);
                 }
@@ -246,7 +246,6 @@ public class ConatctusActivity extends AppCompatActivity {
                         break;
 
 
-
                     case R.id.nav_Share:
                         try {
                             Intent i = new Intent(Intent.ACTION_SEND);
@@ -271,9 +270,10 @@ public class ConatctusActivity extends AppCompatActivity {
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/proximanova-semibold-webfont.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mNewTitle.setSpan(new CustomTypefaceSpan("", font), 0, mNewTitle.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {
@@ -289,6 +289,6 @@ public class ConatctusActivity extends AppCompatActivity {
     }
 
 
-    }
+}
 
 

@@ -40,7 +40,6 @@ public class Department extends AppCompatActivity {
     private Menu menu;
 
 
-
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
@@ -51,11 +50,11 @@ public class Department extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_department);
 
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus = (ImageView) findViewById(R.id.ivPlus);
         ivPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(Department.this,HomeActivity.class);
+                Intent i1 = new Intent(Department.this, HomeActivity.class);
                 startActivity(i1);
                 finish();
             }
@@ -75,46 +74,30 @@ public class Department extends AppCompatActivity {
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                switch (childPosition)
-                {
+                switch (childPosition) {
                     case 0:
-                        Intent i1=new Intent(Department.this,AboutDept.class);
+                        Intent i1 = new Intent(Department.this, AboutDept.class);
                         startActivity(i1);
                         break;
 
                     case 1:
-                        Intent i2=new Intent(Department.this,FacultyMember.class);
-                        if (listDataHeader.get(groupPosition).equals("Civil Engineering"))
-                        {
-                            i2.putExtra("dept","Civil%20Engineering");
-                        }
-                        else if(listDataHeader.get(groupPosition).equals("Computer Engineering"))
-                        {
-                            i2.putExtra("dept","Computer%20Engineering");
-                        }
-                        else if(listDataHeader.get(groupPosition).equals("Electronics & Comm."))
-                        {
-                            i2.putExtra("dept","Electronics%20and%20Comm.");
-                        }
-                        else if(listDataHeader.get(groupPosition).equals("Mechanical Engineering"))
-                        {
-                            i2.putExtra("dept","Mechanical%20Engineering");
-                        }
-                        else if(listDataHeader.get(groupPosition).equals("Information Technology"))
-                        {
-                            i2.putExtra("dept","Information%20Technology");
-                        }
-                        else if(listDataHeader.get(groupPosition).equals("Electrical Engineering"))
-                        {
-                            i2.putExtra("dept","Electrical%20Department");
-                        }
-                        else if(listDataHeader.get(groupPosition).equals("Mathimatics Department"))
-                        {
-                            i2.putExtra("dept","Mathematics%20Department");
-                        }
-                        else
-                        {
-                            i2.putExtra("dept","mba");
+                        Intent i2 = new Intent(Department.this, FacultyMember.class);
+                        if (listDataHeader.get(groupPosition).equals("Civil Engineering")) {
+                            i2.putExtra("dept", "Civil%20Engineering");
+                        } else if (listDataHeader.get(groupPosition).equals("Computer Engineering")) {
+                            i2.putExtra("dept", "Computer%20Engineering");
+                        } else if (listDataHeader.get(groupPosition).equals("Electronics & Comm.")) {
+                            i2.putExtra("dept", "Electronics%20and%20Comm.");
+                        } else if (listDataHeader.get(groupPosition).equals("Mechanical Engineering")) {
+                            i2.putExtra("dept", "Mechanical%20Engineering");
+                        } else if (listDataHeader.get(groupPosition).equals("Information Technology")) {
+                            i2.putExtra("dept", "Information%20Technology");
+                        } else if (listDataHeader.get(groupPosition).equals("Electrical Engineering")) {
+                            i2.putExtra("dept", "Electrical%20Department");
+                        } else if (listDataHeader.get(groupPosition).equals("Mathimatics Department")) {
+                            i2.putExtra("dept", "Mathematics%20Department");
+                        } else {
+                            i2.putExtra("dept", "mba");
                         }
                         startActivity(i2);
                         break;
@@ -134,7 +117,6 @@ public class Department extends AppCompatActivity {
                 return false;
             }
         });
-
 
 
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
@@ -159,13 +141,13 @@ public class Department extends AppCompatActivity {
 
 
         Menu m = navigationView.getMenu();
-        for (int i=0;i<m.size();i++) {
+        for (int i = 0; i < m.size(); i++) {
             MenuItem mi = m.getItem(i);
 
             //for aapplying a font to subMenu ...
             SubMenu subMenu = mi.getSubMenu();
-            if (subMenu!=null && subMenu.size() >0 ) {
-                for (int j=0; j <subMenu.size();j++) {
+            if (subMenu != null && subMenu.size() > 0) {
+                for (int j = 0; j < subMenu.size(); j++) {
                     MenuItem subMenuItem = subMenu.getItem(j);
                     applyFontToMenuItem(subMenuItem);
                 }
@@ -263,7 +245,6 @@ public class Department extends AppCompatActivity {
                         break;
 
 
-
                     case R.id.nav_Share:
                         try {
                             Intent i = new Intent(Intent.ACTION_SEND);
@@ -350,7 +331,6 @@ public class Department extends AppCompatActivity {
         Mba.add("Study Materials");
 
 
-
         listDataChild.put(listDataHeader.get(0), CivilEngineering);
         listDataChild.put(listDataHeader.get(1), ComputerEngineering);
         listDataChild.put(listDataHeader.get(2), ElectronicsComm);
@@ -366,9 +346,10 @@ public class Department extends AppCompatActivity {
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/proximanova-semibold-webfont.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mNewTitle.setSpan(new CustomTypefaceSpan("", font), 0, mNewTitle.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {

@@ -11,9 +11,9 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
+        android:background="@drawable/sport"
         android:fitsSystemWindows="true"
-        android:theme="@style/MyTheme.AppBarOverlay"
-        android:background="@drawable/sport">
+        android:theme="@style/MyTheme.AppBarOverlay">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
@@ -34,7 +34,6 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_annual_sports" />
-
 
 
 </android.support.design.widget.CoordinatorLayout>

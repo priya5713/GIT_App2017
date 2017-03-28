@@ -7,9 +7,9 @@
     android:fitsSystemWindows="true">
 
 
-    <include layout="@layout/toolbar_event"/>
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/toolbar_event" />
 
+    <include layout="@layout/toolbar" />
 
 
     <android.support.design.widget.NavigationView

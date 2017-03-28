@@ -20,7 +20,7 @@ public class ViewPageAdapter extends PagerAdapter {
     Context context;
     private String path;
     private String[] filenames;
-//    String[] flag;
+    //    String[] flag;
     int v;
     LayoutInflater inflater;
 

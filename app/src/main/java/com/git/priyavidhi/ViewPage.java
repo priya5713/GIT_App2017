@@ -27,12 +27,13 @@ public class ViewPage extends AppCompatActivity {
     int[] flag;
     String[] fileNames;
     String path;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_page);
         path = getIntent().getStringExtra("path");
-        Log.e("path",path);
+        Log.e("path", path);
         try {
             fileNames = getAssets().list("images/" + path);
         } catch (IOException e) {
@@ -52,18 +53,19 @@ public class ViewPage extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 //        ab.setTitle("Ratri B4 Navratri");//get it dynamiccally
 
-        int v1=getIntent().getIntExtra("pos",0);
+        int v1 = getIntent().getIntExtra("pos", 0);
 
 //        flag = new int[] {  R.drawable.v1,R.drawable.v2,R.drawable.v3,R.drawable.v4,R.drawable.v5,
 //                R.drawable.v6,R.drawable.v7,R.drawable.v8,R.drawable.v9,R.drawable.v10 };
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         // Pass results to ViewPagerAdapter Class
-        adapter = new ViewPageAdapter(ViewPage.this,path,fileNames);
+        adapter = new ViewPageAdapter(ViewPage.this, path, fileNames);
         // Binds the Adapter to the ViewPager
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(v1);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {

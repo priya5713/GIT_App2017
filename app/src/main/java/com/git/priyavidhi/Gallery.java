@@ -1,4 +1,5 @@
 package com.git.priyavidhi;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -48,7 +49,7 @@ public class Gallery extends AppCompatActivity {
     };
 
     private final int[] android_image_urls = {
-            R.drawable.folder,R.drawable.folder,R.drawable.folder,R.drawable.folder,R.drawable.folder};
+            R.drawable.folder, R.drawable.folder, R.drawable.folder, R.drawable.folder, R.drawable.folder};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,11 +71,11 @@ public class Gallery extends AppCompatActivity {
         ab.setTitle(text2);
 
 
-        ivPlus=(ImageView)findViewById(R.id.ivPlus);
+        ivPlus = (ImageView) findViewById(R.id.ivPlus);
         ivPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(Gallery.this,HomeActivity.class);
+                Intent i1 = new Intent(Gallery.this, HomeActivity.class);
                 startActivity(i1);
                 finish();
             }
@@ -89,13 +90,13 @@ public class Gallery extends AppCompatActivity {
 
 
         Menu m = navigationView.getMenu();
-        for (int i=0;i<m.size();i++) {
+        for (int i = 0; i < m.size(); i++) {
             MenuItem mi = m.getItem(i);
 
             //for aapplying a font to subMenu ...
             SubMenu subMenu = mi.getSubMenu();
-            if (subMenu!=null && subMenu.size() >0 ) {
-                for (int j=0; j <subMenu.size();j++) {
+            if (subMenu != null && subMenu.size() > 0) {
+                for (int j = 0; j < subMenu.size(); j++) {
                     MenuItem subMenuItem = subMenu.getItem(j);
                     applyFontToMenuItem(subMenuItem);
                 }
@@ -193,7 +194,6 @@ public class Gallery extends AppCompatActivity {
                         break;
 
 
-
                     case R.id.nav_Share:
                         try {
                             Intent i = new Intent(Intent.ACTION_SEND);
@@ -215,21 +215,22 @@ public class Gallery extends AppCompatActivity {
         });
     }
 
-    private void initViews(){
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
+    private void initViews() {
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),2);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
 
         ArrayList<AndroidVersion> androidVersions = prepareData();
-        DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
+        DataAdapter adapter = new DataAdapter(getApplicationContext(), androidVersions);
         recyclerView.setAdapter(adapter);
 
     }
-    private ArrayList<AndroidVersion> prepareData(){
+
+    private ArrayList<AndroidVersion> prepareData() {
 
         ArrayList<AndroidVersion> android_version = new ArrayList<>();
-        for(int i=0;i<android_version_names.length;i++){
+        for (int i = 0; i < android_version_names.length; i++) {
             AndroidVersion androidVersion = new AndroidVersion();
             androidVersion.setAndroid_version_name(android_version_names[i]);
             androidVersion.setAndroid_image_url(android_image_urls[i]);
@@ -237,12 +238,14 @@ public class Gallery extends AppCompatActivity {
         }
         return android_version;
     }
+
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/proximanova-semibold-webfont.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mNewTitle.setSpan(new CustomTypefaceSpan("", font), 0, mNewTitle.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {

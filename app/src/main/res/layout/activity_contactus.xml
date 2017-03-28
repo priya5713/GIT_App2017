@@ -21,7 +21,8 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <include layout="@layout/toolbar_contact"/>
+    <include layout="@layout/toolbar_contact" />
+
     <include layout="@layout/toolbar" />
 
 
@@ -35,7 +36,6 @@
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@color/white"
         app:menu="@menu/drawer_view" />
-
 
 
 </android.support.v4.widget.DrawerLayout>

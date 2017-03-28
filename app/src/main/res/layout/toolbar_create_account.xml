@@ -52,13 +52,13 @@
             android:layout_height="match_parent"
             android:background="@color/white"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,14 +73,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="1" >
+                    android:weightSum="1">
 
                     <EditText
                         android:id="@+id/edtName"
@@ -107,7 +107,7 @@
                     android:layout_marginTop="-2dip"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="1" >
+                    android:weightSum="1">
 
                     <EditText
                         android:id="@+id/edtEmail"
@@ -134,7 +134,7 @@
                     android:layout_marginTop="-2dip"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="1" >
+                    android:weightSum="1">
 
                     <Spinner
                         android:id="@+id/spCountry"
@@ -162,7 +162,7 @@
                     android:layout_marginTop="-2dip"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="1" >
+                    android:weightSum="1">
 
                     <Spinner
                         android:id="@+id/spState"
@@ -190,7 +190,7 @@
                     android:layout_marginTop="-2dip"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="1" >
+                    android:weightSum="1">
 
                     <Spinner
                         android:id="@+id/spCity"
@@ -218,7 +218,7 @@
                     android:layout_marginTop="-2dip"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="1" >
+                    android:weightSum="1">
 
                     <EditText
                         android:id="@+id/edtPhoneNo"
@@ -245,7 +245,7 @@
                     android:layout_marginTop="-2dip"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="1" >
+                    android:weightSum="1">
 
                     <EditText
                         android:id="@+id/edtPassword"
@@ -272,7 +272,7 @@
                     android:layout_marginTop="-2dip"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:weightSum="1" >
+                    android:weightSum="1">
 
                     <EditText
                         android:id="@+id/edtRetypePass"

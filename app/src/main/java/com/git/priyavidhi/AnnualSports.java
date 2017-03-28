@@ -40,33 +40,24 @@ public class AnnualSports extends AppCompatActivity {
         ab.setTitle("Annual Sports");
 
 
-
-
-
-        WebView webView=(WebView)findViewById(R.id.wv1);
+        WebView webView = (WebView) findViewById(R.id.wv1);
 
         String text = "<html><body>"
-                +"<p align=\"justify\">"
-                +"<b>"
-                +"Annual Sports"
-                +"</b>"
-                +"</p>"
-                +"<p align=\"justify\">"
-                +"Every year The Annual Sports Meet is organized at the College Campus. Students and Faculties are at their harmony to organize panoramic activities related to sports events. Gandhinagar Institute of Technology has formed a “Sports Committee” for bringing out talent in students and giving them a platform to perform in sports events organized by college, other colleges and GTU which is helpful for overall development of students physically and mentally.  It also used to increase levels of discipline and sportsman spirit. The whole event is organized not only inside the GIT Campus, but also at some prime Sports locations of Gujarat State. There are 8 sports activities conducted (4 outdoor & 4 indoor) where more then 600+ players in cricket, 400+ players in Volleyball, 250+ players in Kabbadi, 600+ players in badminton, 350+ players in Carom, 150+ players in Table-Tennis and 180+ players in Chess, participates in the competition every year."
-                +"</p>"
+                + "<p align=\"justify\">"
+                + "<b>"
+                + "Annual Sports"
+                + "</b>"
+                + "</p>"
+                + "<p align=\"justify\">"
+                + "Every year The Annual Sports Meet is organized at the College Campus. Students and Faculties are at their harmony to organize panoramic activities related to sports events. Gandhinagar Institute of Technology has formed a “Sports Committee” for bringing out talent in students and giving them a platform to perform in sports events organized by college, other colleges and GTU which is helpful for overall development of students physically and mentally.  It also used to increase levels of discipline and sportsman spirit. The whole event is organized not only inside the GIT Campus, but also at some prime Sports locations of Gujarat State. There are 8 sports activities conducted (4 outdoor & 4 indoor) where more then 600+ players in cricket, 400+ players in Volleyball, 250+ players in Kabbadi, 600+ players in badminton, 350+ players in Carom, 150+ players in Table-Tennis and 180+ players in Chess, participates in the competition every year."
+                + "</p>"
                 + "</body></html>";
 
         webView.loadData(text, "text/html", "utf-8");
 
 
-
-
-
-
-
-
-
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item != null && item.getItemId() == android.R.id.home) {
